@@ -1,6 +1,7 @@
 import express = require('express');
 import fs = require('fs');
 import bodyParser=require('body-parser');
+import {Person} from './person';
 
 var app = express();
 var port = 8180;
@@ -10,10 +11,12 @@ app.use(bodyParser.json())
 
 let persons : Array<Person>
 = [
-     {id:1,firstname:'Thomas',lastname:'Huber'},
-     {id:2,firstname:'Max',lastname:'Payne'},
-     {id:3,firstname:'Lara',lastname:'Croft'},
+     {id:1,firstname:'Max',lastname:'Payne'},
+     {id:2,firstname:'Lara',lastname:'Croft'},
+     {id:3,firstname:'Thomas',lastname:'Huber', githubusername:'thomasclaudiushuber'},
      {id:4,firstname:'Duke',lastname:'Nukem'},
+     {id:5,firstname:'Thomas',lastname:'Gassmann'},
+     {id:6,firstname:'Thomas',lastname:'Bandixen',githubusername:'tbandixen'},
 ]
 
 let personRouter =  express.Router();
@@ -72,10 +75,3 @@ app.use('/api',personRouter);
 app.listen(port,function(){
     console.log('Started listening on port '+port);
 })
-
-interface Person
-{
-    id:number;
-    firstname:string;
-    lastname:string;
-}
