@@ -18,6 +18,15 @@ let persons: Array<Person> = [
     { id: 6, firstname: "Thomas", lastname: "Bandixen", githubusername: "tbandixen" },
 ];
 
+//CORS middleware
+let allowCrossDomain = function (req: any, res: any, next: any) {
+    res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+
+    next();
+}
+
 let personRouter = express.Router();
 
 personRouter.route("/persons")
@@ -65,6 +74,7 @@ function getNextId(): number {
     });
     return maxId + 1;
 }
+app.use(allowCrossDomain);
 app.use("/api", personRouter);
 
 app.listen(port, () => {
