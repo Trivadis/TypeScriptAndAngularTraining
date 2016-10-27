@@ -1,14 +1,14 @@
-import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
-import {Http} from '@angular/http';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Http } from '@angular/http';
 
-import {Person} from './../../model/person';
-import {PersonDetailComponent} from './person-detail.component';
-import {PersonService} from './../../services/person.service';
+import { Person } from './../../model/person';
+import { PersonDetailComponent } from './person-detail.component';
+import { PersonService } from './../../services/person.service';
 
 @Component(
     {
-        selector:'person-list',
+        selector: 'person-list',
         template: `
          <h2>All Persons</h2>
          <ul class="list-group">
@@ -18,25 +18,23 @@ import {PersonService} from './../../services/person.service';
            
          </ul>
       `
-   
     }
 )
-export class PersonListComponent implements OnInit{
-    
-    personList:Person[]
-    
+export class PersonListComponent implements OnInit {
+
+    personList: Person[]
+
     constructor(
-        private personService:PersonService,
-        private router:Router)    {
+        private personService: PersonService,
+        private router: Router) {
     }
-    
-    onEdit(person:Person)
-    {
-       let link = ['/person', person.id ];
-       this.router.navigate(link);
+
+    onEdit(person: Person) {
+        let link = ['/person', person.id];
+        this.router.navigate(link);
     }
-    
-    ngOnInit(){
-        this.personService.getPersons().subscribe(res=>this.personList = res);
+
+    ngOnInit() {
+        this.personService.getPersons().subscribe(res => this.personList = res);
     }
 }
