@@ -1,20 +1,20 @@
 "use strict";
-var express = require('express');
-var bodyParser = require('body-parser');
+var express = require("express");
+var bodyParser = require("body-parser");
 var app = express();
 var port = 8180;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 var persons = [
-    { id: 1, firstname: 'Max', lastname: 'Payne' },
-    { id: 2, firstname: 'Lara', lastname: 'Croft' },
-    { id: 3, firstname: 'Thomas', lastname: 'Huber', githubusername: 'thomasclaudiushuber' },
-    { id: 4, firstname: 'Duke', lastname: 'Nukem' },
-    { id: 5, firstname: 'Thomas', lastname: 'Gassmann' },
-    { id: 6, firstname: 'Thomas', lastname: 'Bandixen', githubusername: 'tbandixen' },
+    { id: 1, firstname: "Max", lastname: "Payne" },
+    { id: 2, firstname: "Lara", lastname: "Croft" },
+    { id: 3, firstname: "Thomas", lastname: "Huber", githubusername: "thomasclaudiushuber" },
+    { id: 4, firstname: "Duke", lastname: "Nukem" },
+    { id: 5, firstname: "Thomas", lastname: "Gassmann" },
+    { id: 6, firstname: "Thomas", lastname: "Bandixen", githubusername: "tbandixen" },
 ];
 var personRouter = express.Router();
-personRouter.route('/Persons')
+personRouter.route("/persons")
     .post(function (request, response) {
     var person = request.body;
     person.id = getNextId();
@@ -37,7 +37,7 @@ personRouter.route('/Persons')
     .get(function (request, response) {
     response.send(JSON.stringify(persons));
 });
-personRouter.route('/Persons/:id')
+personRouter.route("/persons/:id")
     .get(function (request, response) {
     var id = request.params.id;
     var filteredPersons = persons.filter(function (p) { return p.id == id; });
@@ -55,7 +55,7 @@ function getNextId() {
     });
     return maxId + 1;
 }
-app.use('/api', personRouter);
+app.use("/api", personRouter);
 app.listen(port, function () {
-    console.log('Started listening on port ' + port);
+    console.log("Started listening on port " + port);
 });
