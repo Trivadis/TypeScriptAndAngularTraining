@@ -1,11 +1,10 @@
-import {EditorData} from './editordata-decorator';
+import { EditorData } from './editordata-decorator';
 
 @EditorData({
-    firstname:"Thomas",
-    lastname:"Huber"
+    firstname: "Thomas",
+    lastname: "Huber"
 })
-export class Application
-{
+export class Application {
 
 }
 

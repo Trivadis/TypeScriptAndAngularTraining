@@ -7,5 +7,5 @@ function getNumber(init) {
     }
     return x;
 }
-document.write(getNumber(true)+"<br>");
-document.write(getNumber(false)+"<br>");
+document.write(getNumber(true) + "<br>");
+document.write(getNumber(false) + "<br>");

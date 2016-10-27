@@ -10,6 +10,6 @@ var Persons;
             return this.firstName + " " + this.lastName;
         };
         return Person;
-    }());
+    } ());
     Persons.Person = Person;
 })(Persons = exports.Persons || (exports.Persons = {}));

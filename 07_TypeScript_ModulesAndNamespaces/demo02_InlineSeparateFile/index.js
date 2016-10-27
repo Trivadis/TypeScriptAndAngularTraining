@@ -15,7 +15,7 @@ System.register("persons", [], function (exports_1, context_1) {
                         return this.firstName + " " + this.lastName;
                     };
                     return Person;
-                }());
+                } ());
                 Persons.Person = Person;
             })(Persons = Persons || (Persons = {}));
             exports_1("Persons", Persons);

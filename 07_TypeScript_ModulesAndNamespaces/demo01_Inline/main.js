@@ -9,7 +9,7 @@ var Persons;
             return this.firstName + " " + this.lastName;
         };
         return Person;
-    }());
+    } ());
     Persons.Person = Person;
 })(Persons || (Persons = {}));
 var p = new Persons.Person("Thomas", "Huber");
