@@ -13,6 +13,13 @@ var persons = [
     { id: 5, firstname: "Thomas", lastname: "Gassmann" },
     { id: 6, firstname: "Thomas", lastname: "Bandixen", githubusername: "tbandixen" },
 ];
+//CORS middleware
+var allowCrossDomain = function (req, res, next) {
+    res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    next();
+};
 var personRouter = express.Router();
 personRouter.route("/persons")
     .post(function (request, response) {
@@ -55,6 +62,7 @@ function getNextId() {
     });
     return maxId + 1;
 }
+app.use(allowCrossDomain);
 app.use("/api", personRouter);
 app.listen(port, function () {
     console.log("Started listening on port " + port);
