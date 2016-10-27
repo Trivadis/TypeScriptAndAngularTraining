@@ -17,7 +17,7 @@ var Rx_1 = require('rxjs/Rx');
 var PersonService = (function () {
     function PersonService(_http) {
         this._http = _http;
-        this.persons = persons_data_1.FRIENDS;
+        this.persons = persons_data_1.PERSONS;
     }
     PersonService.prototype.getPersons = function () {
         // return this._http.get('persons.json')
@@ -41,13 +41,14 @@ var PersonService = (function () {
         return observable
             .map(function (persons) {
             var person = persons.filter(function (f) { return f.id == personId; })[0];
-            return new person_1.Person(person.id, person.firstname, person.githubaccount);
+            return new person_1.Person(person.id, person.firstname, person.lastname, person.githubaccount);
         });
         ;
     };
     PersonService.prototype.savePerson = function (person) {
         var dbPerson = this.persons.filter(function (f) { return f.id == person.id; })[0];
         dbPerson.firstname = person.firstname;
+        dbPerson.lastname = person.lastname;
         dbPerson.githubaccount = person.githubaccount;
     };
     PersonService = __decorate([

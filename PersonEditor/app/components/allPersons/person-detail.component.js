@@ -36,7 +36,7 @@ var PersonDetailComponent = (function () {
     PersonDetailComponent = __decorate([
         core_1.Component({
             selector: 'person-detail',
-            template: "<h2>PersonDetail: {{person?.firstname}}</h2>\n      <div *ngIf=\"person\">\n         <div>\n           <label for=\"inputFirstname\">Firstname: </label>\n           <input id=\"inputFirstname\" class=\"form-control\" type=\"text\" [(ngModel)]=\"person.firstname\"/>\n         </div>\n            <div>\n           <label for=\"inputGithub\">Github account: </label>\n           <input id=\"inputGithub\" class=\"form-control\" type=\"text\" [(ngModel)]=\"person.githubaccount\"/>\n         </div>\n         <button class=\"btn btn-primary\" (click)=\"onSave()\">Save</button>\n      </div>"
+            template: "<h2>PersonDetail: {{person?.firstname}}</h2>\n      <div *ngIf=\"person\">\n         <div>\n           <label for=\"inputFirstname\">Firstname: </label>\n           <input id=\"inputFirstname\" class=\"form-control\" type=\"text\" [(ngModel)]=\"person.firstname\"/>\n         </div>\n          <div>\n           <label for=\"inputLastName\">LastName: </label>\n           <input id=\"inputLastName\" class=\"form-control\" type=\"text\" [(ngModel)]=\"person.lastname\"/>\n         </div>\n            <div>\n           <label for=\"inputGithub\">Github account: </label>\n           <input id=\"inputGithub\" class=\"form-control\" type=\"text\" [(ngModel)]=\"person.githubaccount\"/>\n         </div>\n         <button class=\"btn btn-primary\" (click)=\"onSave()\">Save</button>\n      </div>"
         }), 
         __metadata('design:paramtypes', [person_service_1.PersonService, router_1.ActivatedRoute])
     ], PersonDetailComponent);

@@ -11,6 +11,10 @@ import {PersonService} from './../../services/person.service';
            <label for="inputFirstname">Firstname: </label>
            <input id="inputFirstname" class="form-control" type="text" [(ngModel)]="person.firstname"/>
          </div>
+          <div>
+           <label for="inputLastName">LastName: </label>
+           <input id="inputLastName" class="form-control" type="text" [(ngModel)]="person.lastname"/>
+         </div>
             <div>
            <label for="inputGithub">Github account: </label>
            <input id="inputGithub" class="form-control" type="text" [(ngModel)]="person.githubaccount"/>

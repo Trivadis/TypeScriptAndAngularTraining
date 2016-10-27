@@ -9,15 +9,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var router_1 = require('@angular/router');
 var AppComponent = (function () {
-    function AppComponent() {
+    function AppComponent(router) {
+        var _this = this;
+        this.router = router;
+        this.url = "";
+        this.router.events.subscribe(function (e) { return _this.onRouterEvent(e); });
     }
+    AppComponent.prototype.onRouterEvent = function (event) {
+        this.url = event.url;
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "<h1>Person Editor</h1>\n        <div class=\"btn-group\">\n                  <a routerLink=\"/persons\" class=\"btn btn-primary\">All Persons</a>\n                  <a routerLink=\"/developers\" class=\"btn btn-primary\">Developers</a>\n\n                  </div>\n                  <router-outlet></router-outlet> "
+            template: "<h1>Person Editor</h1>\n        <ul class=\"nav nav-pills\">\n               <li [class.active]=\"url.startsWith('/person')\"><a routerLink=\"/persons\">All Persons</a></li>\n               <li [class.active]=\"url==='/developers'\">  <a routerLink=\"/developers\" >Developers</a></li>\n            </ul>\n           <router-outlet></router-outlet> "
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [router_1.Router])
     ], AppComponent);
     return AppComponent;
 }());
