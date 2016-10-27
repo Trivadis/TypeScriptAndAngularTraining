@@ -5,5 +5,5 @@ function sortFriendsByFirstName(friends)
     {
         return x.firstname.localCompare(y.firstname);
     });
-    return result;
+    return result; 
 }
