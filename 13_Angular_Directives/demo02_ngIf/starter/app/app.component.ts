@@ -18,10 +18,10 @@ import {Person} from './person';
            </table>
            <div>
              <label for="firstname" >Selected Person</label>
-             <input id="firstname" type="text" [(ngModel)]="selectedPerson.firstname"/>
+             <input id="firstname" type="text" [(ngModel)]="selectedPerson?.firstname"/>
            </div>
            <div>
-             Look in the browser's console. There's an error. Show the div above only if selectedPerson is not undefined. Do this with "ngIf"
+             Display the div with the firstname-input only if a person is selected. Use "ngIf" to do this!
            </div>
             `
 })

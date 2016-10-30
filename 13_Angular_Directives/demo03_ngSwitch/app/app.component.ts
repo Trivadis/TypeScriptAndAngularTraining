@@ -17,14 +17,15 @@ import {Person} from './person';
              </tr>
            </table>
            <div *ngIf="selectedPerson">
-		     Selected Person: 
+		         Selected Person: 
              <label for="firstname" >Firstname: </label>
              <input id="firstname" type="text" [(ngModel)]="selectedPerson.firstname"/>
            </div>
            
-           <!-- Special bonus -->
-           <div *ngIf="selectedPerson?.firstname === 'Thomas'">
-             You've selected a Thomas in the list. :-)
+           <div [ngSwitch]="selectedPerson?.firstname">
+             <div *ngSwitchCase="'Thomas'">I'm teaching Angular</div>
+             <div *ngSwitchCase="'Lara'">I'm playing games</div>
+             <div *ngSwitchDefault>I'm just a fallback</div>
            </div>
             `
 })
