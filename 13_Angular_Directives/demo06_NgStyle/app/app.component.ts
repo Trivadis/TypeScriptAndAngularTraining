@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'my-app',
-  template: `<h1>Number of Persons {{persons.length}}</h1>
-             <input type="text" [ngStyle]="getMyStyles()" value="Hello" #myInput>
+  template: `<input type="text" [ngStyle]="getMyStyles()" value="Hello">
             `
 })
 export class AppComponent {

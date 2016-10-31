@@ -16,16 +16,17 @@ import {Person} from './person';
                <td>{{person.githubaccount}}</td>
              </tr>
            </table>
-           <div *ngIf="selectedPerson">
-		     Selected Person: 
-             <label for="firstname" >Firstname: </label>
-             <input id="firstname" type="text" [(ngModel)]="selectedPerson.firstname"/>
-           </div>
+      
+          <!-- Classical ngIf -->
+		      <input *ngIf="selectedPerson" type="text" [(ngModel)]="selectedPerson.firstname"/>       
            
-           <!-- Special bonus -->
-           <div *ngIf="selectedPerson?.firstname === 'Thomas'">
-             You've selected a Thomas in the list. :-)
-           </div>
+          <!-- Template attribute with ngIf -->
+          <input template="ngIf:selectedPerson" type="text" [(ngModel)]="selectedPerson.firstname"/>
+                
+          <!-- Template element with ngIf -->
+          <template [ngIf]="selectedPerson">
+            <input type="text" [(ngModel)]="selectedPerson.firstname"/>
+          </template>
             `
 })
 export class AppComponent {

@@ -3,7 +3,7 @@ import {Person} from './person';
 
 @Component({
   selector: 'my-app',
-  template: `<h1>Number of Persons {{persons.length}}</h1>
+  template: `<h1>Click a person to select it</h1>
            <table>
              <tr>
                <th>Firstname</th>
@@ -16,16 +16,24 @@ import {Person} from './person';
                <td>{{person.githubaccount}}</td>
              </tr>
            </table>
-           <div *ngIf="selectedPerson">
+
+        <p style="font-weight:bold;color:red">TODO: Move selected person code to a Person-Detail-component</p>
+
+        <div *ngIf="selectedPerson">
 		     Selected Person: 
+           <div>
              <label for="firstname" >Firstname: </label>
              <input id="firstname" type="text" [(ngModel)]="selectedPerson.firstname"/>
+           </div> 
+           <div>
+             <label for="lastname" >Firstname: </label>
+             <input id="lastname" type="text" [(ngModel)]="selectedPerson.lastname"/>
            </div>
-           
-           <!-- Special bonus -->
-           <div *ngIf="selectedPerson?.firstname === 'Thomas'">
-             You've selected a Thomas in the list. :-)
+           <div>
+             <label for="githubaccount" >Github: </label>
+             <input id="githubaccount" type="text" [(ngModel)]="selectedPerson.githubaccount"/>
            </div>
+        </div>
             `
 })
 export class AppComponent {

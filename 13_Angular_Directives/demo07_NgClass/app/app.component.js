@@ -12,17 +12,18 @@ var core_1 = require('@angular/core');
 var AppComponent = (function () {
     function AppComponent() {
     }
-    AppComponent.prototype.getMyStyles = function () {
-        var styles = {
-            "background-color": "black",
-            "color": "white"
+    AppComponent.prototype.getMyClasses = function () {
+        var classes = {
+            "isActive": "true",
+            "isSelected": "true"
         };
-        return styles;
+        return classes;
     };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "<h1>Number of Persons {{persons.length}}</h1>\n             <input type=\"text\" [ngStyle]=\"getMyStyles()\" value=\"Hello\" #myInput>\n            "
+            template: "<input type=\"text\" [ngClass]=\"getMyClasses()\" value=\"Hello\" #myInput>\n           <div>\n             Classes set on input: {{myInput.className}}\n           </div>\n            ",
+            styles: ["\n  .isActive{\n    background-color:black;\n    color:white;\n  }\n  .isSelected{\n    font-weight:bold;\n  }\n  \n  "]
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
