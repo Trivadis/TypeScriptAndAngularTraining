@@ -10,6 +10,6 @@ import { PersonListComponent } from './person-list.component';
   declarations: [AppComponent, 
                  PersonDetailComponent,
                  PersonListComponent],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

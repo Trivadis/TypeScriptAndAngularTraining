@@ -9,19 +9,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var person_data_service_1 = require('./person-data.service');
-var AppComponent = (function () {
-    function AppComponent() {
+var PersonDataService = (function () {
+    function PersonDataService() {
     }
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'my-app',
-            template: "<h1>Click a person to select it</h1>\n           <person-list #personList></person-list>\n           <person-detail [person]=\"personList.selectedPerson\"></person-detail>   \n            ",
-            providers: [person_data_service_1.PersonDataService]
-        }), 
+    PersonDataService.prototype.loadPersons = function () {
+        return [
+            { firstname: 'Silvester', lastname: 'Stallone' },
+            { firstname: 'Thomas', lastname: 'Bandixen', githubaccount: 'tbandixen' },
+            { firstname: 'Thomas', lastname: 'Huber', githubaccount: 'thomasclaudiushuber' },
+            { firstname: 'Bruce', lastname: 'Willis' },
+            { firstname: 'Lara', lastname: 'Croft' }];
+    };
+    PersonDataService = __decorate([
+        core_1.Injectable(), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], PersonDataService);
+    return PersonDataService;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.PersonDataService = PersonDataService;
+//# sourceMappingURL=person-data.service.js.map

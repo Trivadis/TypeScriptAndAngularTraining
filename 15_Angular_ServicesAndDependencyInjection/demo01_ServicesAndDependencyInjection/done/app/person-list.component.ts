@@ -1,11 +1,11 @@
-import {Component, Input} from '@angular/core';
-import {Person} from './person';
+import { Component, Input, OnInit } from '@angular/core';
+import { Person } from './person';
+import { PersonDataService } from './person-data.service';
 
 @Component(
     {
-        selector:'person-list',
-        template:`
-         <p style="font-weight:bold;color:red">TODO: Go to the PersonListComponent and extract the hardcoded PERSONS-list into a PersonDataService</p>
+        selector: 'person-list',
+        template: `
          <table>
              <tr>
                <th>Firstname</th>
@@ -18,23 +18,20 @@ import {Person} from './person';
                <td>{{person.githubaccount}}</td>
              </tr>
            </table>`
-               }
+    }
 )
-export class PersonListComponent
-{
-    persons:Person[]=PERSONS;   
-    selectedPerson:Person;
+export class PersonListComponent implements OnInit {
+    
+    persons: Person[];
+    selectedPerson: Person;
 
-    onPersonClick(person:Person)
-    {
+    constructor(private _personDataService: PersonDataService) { }
+
+    ngOnInit() {
+        this.persons = this._personDataService.loadPersons();
+    }
+
+    onPersonClick(person: Person) {
         this.selectedPerson = person;
     }
 }
-
-
-let PERSONS:Person[] = [
-  {firstname:'Silvester', lastname:'Stallone'},
-  {firstname:'Thomas', lastname:'Bandixen',githubaccount:'tbandixen'},
-  {firstname:'Thomas', lastname:'Huber',githubaccount:'thomasclaudiushuber'},
-  {firstname:'Bruce', lastname:'Willis'},
-  {firstname:'Lara', lastname:'Croft'}];

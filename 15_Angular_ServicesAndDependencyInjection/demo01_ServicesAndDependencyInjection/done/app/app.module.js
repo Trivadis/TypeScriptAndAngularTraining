@@ -23,7 +23,7 @@ var AppModule = (function () {
             declarations: [app_component_1.AppComponent,
                 person_detail_component_1.PersonDetailComponent,
                 person_list_component_1.PersonListComponent],
-            bootstrap: [app_component_1.AppComponent]
+            bootstrap: [app_component_1.AppComponent],
         }), 
         __metadata('design:paramtypes', [])
     ], AppModule);

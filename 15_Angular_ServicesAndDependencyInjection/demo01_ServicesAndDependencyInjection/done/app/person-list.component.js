@@ -9,27 +9,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var person_data_service_1 = require('./person-data.service');
 var PersonListComponent = (function () {
-    function PersonListComponent() {
-        this.persons = PERSONS;
+    function PersonListComponent(_personDataService) {
+        this._personDataService = _personDataService;
     }
+    PersonListComponent.prototype.ngOnInit = function () {
+        this.persons = this._personDataService.loadPersons();
+    };
     PersonListComponent.prototype.onPersonClick = function (person) {
         this.selectedPerson = person;
     };
     PersonListComponent = __decorate([
         core_1.Component({
             selector: 'person-list',
-            template: "\n         <p style=\"font-weight:bold;color:red\">TODO: Go to the PersonListComponent and extract the hardcoded PERSONS-list into a PersonDataService</p>\n         <table>\n             <tr>\n               <th>Firstname</th>\n               <th>Lastname</th>\n               <th>Github</th>\n             </tr>     \n             <tr *ngFor=\"let person of persons\" (click)=\"onPersonClick(person)\">\n               <td>{{person.firstname}}</td>\n               <td>{{person.lastname}}</td>\n               <td>{{person.githubaccount}}</td>\n             </tr>\n           </table>"
+            template: "\n         <table>\n             <tr>\n               <th>Firstname</th>\n               <th>Lastname</th>\n               <th>Github</th>\n             </tr>     \n             <tr *ngFor=\"let person of persons\" (click)=\"onPersonClick(person)\">\n               <td>{{person.firstname}}</td>\n               <td>{{person.lastname}}</td>\n               <td>{{person.githubaccount}}</td>\n             </tr>\n           </table>"
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [person_data_service_1.PersonDataService])
     ], PersonListComponent);
     return PersonListComponent;
 }());
 exports.PersonListComponent = PersonListComponent;
-var PERSONS = [
-    { firstname: 'Silvester', lastname: 'Stallone' },
-    { firstname: 'Thomas', lastname: 'Bandixen', githubaccount: 'tbandixen' },
-    { firstname: 'Thomas', lastname: 'Huber', githubaccount: 'thomasclaudiushuber' },
-    { firstname: 'Bruce', lastname: 'Willis' },
-    { firstname: 'Lara', lastname: 'Croft' }];
 //# sourceMappingURL=person-list.component.js.map
