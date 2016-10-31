@@ -17,12 +17,7 @@ import {Person} from './person';
              </tr>
            </table>
 
-           <p style="font-weight:bold;color:red">TODO: Add a remove-button to the PersonDetailComponent</p>
-
-           <person-detail [person]="selectedPerson"></person-detail>
-
-   
-            `
+           <person-detail [person]="selectedPerson" (remove)="onRemove($event)"></person-detail>`
 })
 export class AppComponent {
    persons:Person[]=PERSONS;
@@ -31,6 +26,15 @@ export class AppComponent {
    onPersonClick(person:Person)
    {
      this.selectedPerson = person;
+   }
+
+   onRemove(person:Person)
+   {
+     var index = this.persons.indexOf(person);
+     if(index>-1)
+     {
+       this.persons.splice(index,1);
+     }
    }
 }
 

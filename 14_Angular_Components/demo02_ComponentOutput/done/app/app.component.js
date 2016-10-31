@@ -16,10 +16,16 @@ var AppComponent = (function () {
     AppComponent.prototype.onPersonClick = function (person) {
         this.selectedPerson = person;
     };
+    AppComponent.prototype.onRemove = function (person) {
+        var index = this.persons.indexOf(person);
+        if (index > -1) {
+            this.persons.splice(index, 1);
+        }
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "<h1>Click a person to select it</h1>\n           <table>\n             <tr>\n               <th>Firstname</th>\n               <th>Lastname</th>\n               <th>Github</th>\n             </tr>     \n             <tr *ngFor=\"let person of persons\" (click)=\"onPersonClick(person)\">\n               <td>{{person.firstname}}</td>\n               <td>{{person.lastname}}</td>\n               <td>{{person.githubaccount}}</td>\n             </tr>\n           </table>\n\n           <p style=\"font-weight:bold;color:red\">TODO: Add a remove-button to the PersonDetailComponent</p>\n\n           <person-detail [person]=\"selectedPerson\"></person-detail>\n\n   \n            "
+            template: "<h1>Click a person to select it</h1>\n           <table>\n             <tr>\n               <th>Firstname</th>\n               <th>Lastname</th>\n               <th>Github</th>\n             </tr>     \n             <tr *ngFor=\"let person of persons\" (click)=\"onPersonClick(person)\">\n               <td>{{person.firstname}}</td>\n               <td>{{person.lastname}}</td>\n               <td>{{person.githubaccount}}</td>\n             </tr>\n           </table>\n\n           <person-detail [person]=\"selectedPerson\" (remove)=\"onRemove($event)\"></person-detail>"
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

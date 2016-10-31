@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, Output, EventEmitter } from '@angular/core';
 import {Person} from './person';
 
 @Component(
@@ -20,7 +20,7 @@ import {Person} from './person';
              <input id="githubaccount" type="text" [(ngModel)]="person.githubaccount"/>
            </div>
            
-           TODO: Add a remove button here
+           <button (click)="onRemove()">Remove</button>
         </div>`
     }
 )
@@ -28,4 +28,12 @@ export class PersonDetailComponent
 {
     @Input()
     person:Person;
+
+    @Output()
+    remove = new EventEmitter<Person>();
+
+    onRemove()
+    {
+       this.remove.emit(this.person);
+    }
 }

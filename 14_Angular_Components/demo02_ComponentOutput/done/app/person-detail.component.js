@@ -11,15 +11,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var PersonDetailComponent = (function () {
     function PersonDetailComponent() {
+        this.remove = new core_1.EventEmitter();
     }
+    PersonDetailComponent.prototype.onRemove = function () {
+        this.remove.emit(this.person);
+    };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Object)
     ], PersonDetailComponent.prototype, "person", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], PersonDetailComponent.prototype, "remove", void 0);
     PersonDetailComponent = __decorate([
         core_1.Component({
             selector: 'person-detail',
-            template: "   \n         <div *ngIf=\"person\">\n\t\t     Selected Person: \n           <div>\n             <label for=\"firstname\" >Firstname: </label>\n             <input id=\"firstname\" type=\"text\" [(ngModel)]=\"person.firstname\"/>\n           </div> \n           <div>\n             <label for=\"lastname\" >Firstname: </label>\n             <input id=\"lastname\" type=\"text\" [(ngModel)]=\"person.lastname\"/>\n           </div>\n           <div>\n             <label for=\"githubaccount\" >Github: </label>\n             <input id=\"githubaccount\" type=\"text\" [(ngModel)]=\"person.githubaccount\"/>\n           </div>\n           \n           TODO: Add a remove button here\n        </div>"
+            template: "   \n         <div *ngIf=\"person\">\n\t\t     Selected Person: \n           <div>\n             <label for=\"firstname\" >Firstname: </label>\n             <input id=\"firstname\" type=\"text\" [(ngModel)]=\"person.firstname\"/>\n           </div> \n           <div>\n             <label for=\"lastname\" >Firstname: </label>\n             <input id=\"lastname\" type=\"text\" [(ngModel)]=\"person.lastname\"/>\n           </div>\n           <div>\n             <label for=\"githubaccount\" >Github: </label>\n             <input id=\"githubaccount\" type=\"text\" [(ngModel)]=\"person.githubaccount\"/>\n           </div>\n           \n           <button (click)=\"onRemove()\">Remove</button>\n        </div>"
         }), 
         __metadata('design:paramtypes', [])
     ], PersonDetailComponent);
