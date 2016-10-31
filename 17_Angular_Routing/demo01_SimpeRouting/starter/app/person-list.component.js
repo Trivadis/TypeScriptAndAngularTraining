@@ -9,22 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var http_1 = require('@angular/http');
-require('rxjs/add/operator/map');
-var PersonDataService = (function () {
-    function PersonDataService(_http) {
-        this._http = _http;
-        this.webUrl = "http://localhost:8180/api/Persons";
+var PersonListComponent = (function () {
+    function PersonListComponent() {
     }
-    PersonDataService.prototype.loadPersons = function () {
-        return this._http.get(this.webUrl)
-            .map(function (r) { return r.json(); });
-    };
-    PersonDataService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http])
-    ], PersonDataService);
-    return PersonDataService;
+    PersonListComponent = __decorate([
+        core_1.Component({
+            selector: 'person-list',
+            template: "<h1>Person List</h1>\n                   <div>\n                     There's nothing in here, just another component for routing\n                   </div>"
+        }), 
+        __metadata('design:paramtypes', [])
+    ], PersonListComponent);
+    return PersonListComponent;
 }());
-exports.PersonDataService = PersonDataService;
-//# sourceMappingURL=person-data.service.js.map
+exports.PersonListComponent = PersonListComponent;
+//# sourceMappingURL=person-list.component.js.map

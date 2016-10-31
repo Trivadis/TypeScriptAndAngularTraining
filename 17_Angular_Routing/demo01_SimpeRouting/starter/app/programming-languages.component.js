@@ -9,22 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var http_1 = require('@angular/http');
-require('rxjs/add/operator/map');
-var PersonDataService = (function () {
-    function PersonDataService(_http) {
-        this._http = _http;
-        this.webUrl = "http://localhost:8180/api/Persons";
+var ProgrammingLanguagesComponent = (function () {
+    function ProgrammingLanguagesComponent() {
     }
-    PersonDataService.prototype.loadPersons = function () {
-        return this._http.get(this.webUrl)
-            .map(function (r) { return r.json(); });
-    };
-    PersonDataService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http])
-    ], PersonDataService);
-    return PersonDataService;
+    ProgrammingLanguagesComponent = __decorate([
+        core_1.Component({
+            selector: 'programming-languages',
+            template: "<h1>Programming lanugages</h1>\n                   <div>\n                     There's nothing in here, just another component for routing\n                   </div>"
+        }), 
+        __metadata('design:paramtypes', [])
+    ], ProgrammingLanguagesComponent);
+    return ProgrammingLanguagesComponent;
 }());
-exports.PersonDataService = PersonDataService;
-//# sourceMappingURL=person-data.service.js.map
+exports.ProgrammingLanguagesComponent = ProgrammingLanguagesComponent;
+//# sourceMappingURL=programming-languages.component.js.map
