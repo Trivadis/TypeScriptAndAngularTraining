@@ -8,10 +8,10 @@ app.use(bodyParser.json());
 var persons = [
     { id: 1, firstname: "Max", lastname: "Payne" },
     { id: 2, firstname: "Lara", lastname: "Croft" },
-    { id: 3, firstname: "Thomas", lastname: "Huber", githubusername: "thomasclaudiushuber" },
+    { id: 3, firstname: "Thomas", lastname: "Huber", githubaccount: "thomasclaudiushuber" },
     { id: 4, firstname: "Duke", lastname: "Nukem" },
     { id: 5, firstname: "Thomas", lastname: "Gassmann" },
-    { id: 6, firstname: "Thomas", lastname: "Bandixen", githubusername: "tbandixen" },
+    { id: 6, firstname: "Thomas", lastname: "Bandixen", githubaccount: "tbandixen" },
 ];
 //CORS middleware
 var allowCrossDomain = function (req, res, next) {
@@ -38,6 +38,7 @@ personRouter.route("/persons")
         var personToUpdate = filteredPersons[0];
         personToUpdate.firstname = person.firstname;
         personToUpdate.lastname = person.lastname;
+        personToUpdate.githubaccount = person.githubaccount;
         response.sendStatus(200);
     }
 })
