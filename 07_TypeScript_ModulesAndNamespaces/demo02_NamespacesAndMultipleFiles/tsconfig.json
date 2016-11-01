@@ -1,9 +1,9 @@
 {
     "compilerOptions": {
-        "module": "system",
+        "module": "commonjs",
         "target": "es5",
         "noImplicitAny": false,
         "sourceMap": false,
-        "outFile":"index.js"
+        "outFile": "index.js"
     }
 }

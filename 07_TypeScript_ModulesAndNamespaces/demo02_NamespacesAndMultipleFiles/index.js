@@ -1,4 +1,5 @@
-"use strict";
+var p = new Persons.Person("Thomas", "Huber");
+console.log(p.getFullName());
 var Persons;
 (function (Persons) {
     var Person = (function () {
@@ -10,6 +11,6 @@ var Persons;
             return this.firstName + " " + this.lastName;
         };
         return Person;
-    } ());
+    }());
     Persons.Person = Person;
-})(Persons = exports.Persons || (exports.Persons = {}));
+})(Persons || (Persons = {}));
