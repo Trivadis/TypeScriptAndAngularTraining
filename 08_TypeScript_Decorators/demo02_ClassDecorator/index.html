@@ -8,13 +8,13 @@
 </head>
 
 <body>
-	<canvas id="canv">Canvas here</canvas>
+	Look into the console
 	<script>
         SystemJS.config({
             baseURL: '/',
             defaultJSExtensions: true
         });
-        System.import('./main.js').then(function(){console.log('loaded');
+        System.import('./main.js').then(function(){console.log('modules loaded');
         }).catch(function(err){ console.error(err); });
     </script>
 </body>
