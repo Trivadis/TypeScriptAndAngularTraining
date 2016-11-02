@@ -1,0 +1,13 @@
+<h1>Click a person to select it</h1>
+<table>
+    <tr>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Github</th>
+    </tr>     
+    <tr *ngFor="let person of persons" (click)="onPersonClick(person)">
+    <td>{{person.firstname}}</td>
+    <td>{{person.lastname}}</td>
+    <td>{{person.githubaccount}}</td>
+    </tr>
+</table>

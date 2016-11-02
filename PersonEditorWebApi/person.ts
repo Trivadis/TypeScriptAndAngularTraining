@@ -3,5 +3,5 @@ export interface Person
     id:number;
     firstname:string;
     lastname:string;
-    githubusername?:string;
+    githubaccount?:string;
 }
