@@ -9,41 +9,42 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-//import {FRIENDS} from './persons-data';
-var person_1 = require('./../model/person');
-var persons_data_1 = require('./../mock/persons-data');
+// import {PERSONS} from './../mock/persons-data';
 var http_1 = require('@angular/http');
-var Rx_1 = require('rxjs/Rx');
 var PersonService = (function () {
     function PersonService(_http) {
+        var _this = this;
         this._http = _http;
-        this.persons = persons_data_1.PERSONS;
+        // this.persons = PERSONS;
+        this._http.get('http://localhost:8180/api/persons')
+            .subscribe(function (data) { return _this.persons = data.json(); });
     }
     PersonService.prototype.getPersons = function () {
-        // return this._http.get('persons.json')
-        //  .map(res=> <Person[]> res.json());
-        var promise = Promise.resolve(this.persons);
-        var observable = Rx_1.Observable.fromPromise(promise);
-        return observable;
+        return this.persons;
+        // return this._http.get('http://localhost:8180/api/persons')
+        //     .map(res => <Person[]>res.json());
+        //     var promise = Promise.resolve(this.persons);
+        //    let observable = Observable.fromPromise(promise);
+        //    return observable;
     };
     PersonService.prototype.getPersonsWithGithubAccount = function () {
-        var promise = Promise.resolve(this.persons);
-        var observable = Rx_1.Observable.fromPromise(promise);
-        return observable
-            .map(function (f) { return f.filter(function (f) { return f.githubaccount != null && f.githubaccount != ""; }); });
+        return this.persons.filter(function (f) { return f.githubaccount != null && f.githubaccount != ""; });
+        // var promise = Promise.resolve(this.persons);
+        // let observable = Observable.fromPromise(promise);
+        // return observable
+        //     .map(f => f.filter(f => f.githubaccount != null && f.githubaccount != ""));
     };
     PersonService.prototype.getPersonById = function (personId) {
         // return this._http.get('persons.json')
         // .map(res=> <Person[]> res.json())
         // .map(persons => persons.filter(f=>f.id == personId)[0]);
-        var promise = Promise.resolve(this.persons);
-        var observable = Rx_1.Observable.fromPromise(promise);
-        return observable
-            .map(function (persons) {
-            var person = persons.filter(function (f) { return f.id == personId; })[0];
-            return new person_1.Person(person.id, person.firstname, person.lastname, person.githubaccount);
-        });
-        ;
+        // var promise = Promise.resolve(this.persons);
+        // let observable = Observable.fromPromise(promise);
+        return this.persons.filter(function (f) { return f.id == personId; })[0];
+        // .map(persons => {
+        //     var person = persons.filter(f => f.id == personId)[0]
+        //     return new Person(person.id, person.firstname, person.lastname, person.githubaccount);
+        // });;
     };
     PersonService.prototype.savePerson = function (person) {
         var dbPerson = this.persons.filter(function (f) { return f.id == person.id; })[0];

@@ -35,6 +35,7 @@ export class PersonListComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.personService.getPersons().subscribe(res => this.personList = res);
+        // this.personService.getPersons().subscribe(res => this.personList = res);
+        this.personList = this.personService.getPersons();
     }
 }

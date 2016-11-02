@@ -21,8 +21,8 @@ var PersonListComponent = (function () {
         this.router.navigate(link);
     };
     PersonListComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.personService.getPersons().subscribe(function (res) { return _this.personList = res; });
+        // this.personService.getPersons().subscribe(res => this.personList = res);
+        this.personList = this.personService.getPersons();
     };
     PersonListComponent = __decorate([
         core_1.Component({
