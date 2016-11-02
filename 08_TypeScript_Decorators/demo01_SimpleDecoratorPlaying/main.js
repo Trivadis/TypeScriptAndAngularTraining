@@ -14,9 +14,9 @@ var Person = (function () {
         this.name = "Thomas";
         this.name = name;
     }
+    __decorate([
+        Format("Dear")
+    ], Person.prototype, "name", void 0);
     return Person;
 }());
-__decorate([
-    Format("Dear")
-], Person.prototype, "name", void 0);
 var p = new Person("Thomas");
