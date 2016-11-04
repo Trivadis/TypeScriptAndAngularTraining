@@ -48,7 +48,7 @@ personRouter.route("/persons")
             let personToUpdate = filteredPersons[0];
             personToUpdate.firstname = person.firstname;
             personToUpdate.lastname = person.lastname;
-			personToUpdate.githubaccount = person.githubaccount;
+            personToUpdate.githubaccount = person.githubaccount;
             response.sendStatus(200);
         }
     })
