@@ -20,7 +20,7 @@ export class PersonService {
         return this._http.get('http://localhost:8180/api/persons')
             .flatMap(res => <Person[]>res.json());
     }
-    getPersonsWithGithubAccount() {
+    getPersonsWithGithubAccount(): Observable<Person[]> {
         return this._http.get('http://localhost:8180/api/persons')
             .flatMap(res => <Person[]>res.json())
             .filter(p => p.githubaccount != null && p.githubaccount != "");
