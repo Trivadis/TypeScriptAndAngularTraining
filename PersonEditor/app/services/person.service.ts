@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs/observable';
 import { Injectable } from '@angular/core';
 //import {FRIENDS} from './persons-data';
 import { Person } from './../model/person';
@@ -15,7 +16,7 @@ export class PersonService {
         //     .map(res => <Person[]>res.json());
         // .subscribe(data => this.persons = data.json());
     }
-    getPersons() {
+    getPersons(): Observable<Person[]> {
         return this._http.get('http://localhost:8180/api/persons')
             .flatMap(res => <Person[]>res.json());
     }
