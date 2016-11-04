@@ -28,8 +28,8 @@ export class PersonDetailComponent implements OnInit {
   person: Person;
 
   constructor(
-    private _personService: PersonService
-    , private route: ActivatedRoute) {
+    private _personService: PersonService,
+    private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
@@ -44,5 +44,4 @@ export class PersonDetailComponent implements OnInit {
     this._personService.savePerson(this.person);
     window.history.back();
   }
-
 }
