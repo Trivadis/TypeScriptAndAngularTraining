@@ -22,7 +22,7 @@ import { PersonService } from './../../services/person.service';
 )
 export class PersonListComponent implements OnInit {
 
-    personList: Person[]
+    personList: Person[] = [];
 
     constructor(
         private personService: PersonService,
@@ -35,7 +35,6 @@ export class PersonListComponent implements OnInit {
     }
 
     ngOnInit() {
-        // this.personService.getPersons().subscribe(res => this.personList = res);
-        this.personList = this.personService.getPersons();
+        this.personService.getPersons().subscribe(res => this.personList.push(res));
     }
 }

@@ -43,7 +43,7 @@ import { Router } from '@angular/router';
 )
 export class PersonsOnGithubComponent implements OnInit {
 
-    personList: Person[]
+    personList: Person[] = [];
 
     myuser: GithubUser;
     myrepos: GithubRepo[];
@@ -56,7 +56,7 @@ export class PersonsOnGithubComponent implements OnInit {
     }
 
     ngOnInit() {
-        this._personService.getPersonsWithGithubAccount().subscribe(res => this.personList = res);
+        this._personService.getPersonsWithGithubAccount().subscribe(res => this.personList.push(res));
     }
 
     onLoadGithubDetails(person: Person) {
