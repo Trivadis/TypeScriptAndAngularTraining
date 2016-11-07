@@ -8,20 +8,15 @@ import { PersonService } from './../../services/person.service';
 
 @Component(
     {
+        moduleId: module.id,
         selector: 'person-list',
-        template: `
-         <h2>All Persons</h2>
-         <ul class="list-group">
-           <li class="list-group-item" *ngFor="let person of personList" (click)="onEdit(person)">
-             {{person.firstname}} <span *ngIf="person.githubaccount">(Github: {{person.githubaccount}})</span>
-           </li>
-           
-         </ul>
-      `
+        templateUrl: 'person-list.component.html',
+        styleUrls: ['person-list.component.css']
     }
 )
 export class PersonListComponent implements OnInit {
-
+    pageTitle:string = "All persons";
+    listFilter: string;
     personList: Person[] = [];
 
     constructor(
@@ -35,6 +30,7 @@ export class PersonListComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.personService.getPersons().subscribe(res => this.personList.push(res));
+        this.personService.getPersons()
+            .subscribe(res => this.personList = res);
     }
 }

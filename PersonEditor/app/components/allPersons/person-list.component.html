@@ -1,0 +1,36 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        {{pageTitle}}
+    </div>
+    <!-- Filter -->
+    <div class='row' style="margin: 10px 5px;">
+        <div class='col-md-2'>Search by:</div>
+        <div class='col-md-4'>
+            <input type='text' [(ngModel)]='listFilter' />
+        </div>
+    </div>
+    <div class='panel-body'>
+        <div class='table-responsive'>
+            <table class='table' *ngIf='personList && personList.length'>
+                <thead>
+                    <tr>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Github</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let person of personList | personFilter: listFilter'
+                            (click)="onEdit(person)">
+                        <td>{{person.firstname}}</td>
+                        <td>{{ person.lastname }}</td>
+                        <td>
+                            <span *ngIf="person.githubaccount">(Github: {{person.githubaccount}})</span>
+                            <span *ngIf="!person.githubaccount">-</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -16,9 +16,9 @@ export class PersonService {
         //     .map(res => <Person[]>res.json());
         // .subscribe(data => this.persons = data.json());
     }
-    getPersons(): Observable<Person> {
+    getPersons(): Observable<Person[]> {
         return this._http.get('http://localhost:8180/api/persons')
-            .flatMap(res => <Person[]>res.json());
+            .map(res => <Person[]>res.json());
     }
     getPersonsWithGithubAccount(): Observable<Person> {
         return this._http.get('http://localhost:8180/api/persons')
@@ -26,7 +26,7 @@ export class PersonService {
             .filter(p => p.githubaccount != null && p.githubaccount != "");
     }
 
-    getPersonById(personId: number) {
+    getPersonById(personId: number): Observable<Person> {
         return this._http.get('http://localhost:8180/api/persons/' + personId)
             .map(res => <Person>res.json());
     }

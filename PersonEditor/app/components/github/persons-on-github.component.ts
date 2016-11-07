@@ -7,42 +7,13 @@ import { Router } from '@angular/router';
 
 @Component(
     {
+        moduleId: module.id,
         selector: 'persons-on-github',
-        template: `
-         <h2>Developers</h2>
-         <ul class="list-group">
-           <li class="list-group-item"
-           [class.active]="person.githubaccount===currentUser"
-            *ngFor="let person of personList"
-             (click)="onLoadGithubDetails(person)">{{person.firstname}} (Github: {{person.githubaccount}})</li>
-         </ul>
-
-        <div *ngIf="myuser"> 
-             <div>
-                <img class="img-rounded" [src]="myuser?.avatar_url" width="200" height="200"/>
-              </div>
-            <div>
-            {{errorMessage}}
-            </div>
-            
-            <table class="table-striped">
-            <thead>
-                <tr>
-                    <th>Repository</th><th>Language</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let repo of myrepos">
-                    <td>{{repo.name}}</td><td>{{repo.language}}</td>
-                </tr>
-            </tbody>
-            </table>
-         </div>
-     `
+        templateUrl: 'persons-on-github.Component.html'
     }
 )
 export class PersonsOnGithubComponent implements OnInit {
-
+    pageTitle:string = "Developers"
     personList: Person[] = [];
 
     myuser: GithubUser;
@@ -62,12 +33,16 @@ export class PersonsOnGithubComponent implements OnInit {
     onLoadGithubDetails(person: Person) {
         this.currentUser = person.githubaccount;
         this.loadGithubUser()
-            .subscribe(user => { this.myuser = user as GithubUser },
-            error => this.errorMessage = <any>error);
+            .subscribe(
+                user => { this.myuser = user as GithubUser },
+                error => this.errorMessage = <any>error
+            );
 
         this.loadGithubUserRepos()
-            .subscribe(repos => this.myrepos = repos as GithubRepo[],
-            error => this.errorMessage = <any>error);
+            .subscribe(
+                repos => this.myrepos = repos as GithubRepo[],
+                error => this.errorMessage = <any>error
+            );
     }
 
     loadGithubUser() {

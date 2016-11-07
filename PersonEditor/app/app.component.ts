@@ -7,12 +7,18 @@ import { Router, Event } from '@angular/router';
 @Component(
     {
         selector: 'my-app',
-        template: `<h1>Person Editor</h1>
-        <ul class="nav nav-pills">
-               <li [class.active]="url.startsWith('/person')"><a routerLink="/persons">All Persons</a></li>
-               <li [class.active]="url==='/developers'">  <a routerLink="/developers" >Developers</a></li>
+        template: `
+        <div class='container'>
+            <h1>Person Editor</h1>
+            <ul class="nav nav-pills">
+                <li [class.active]="url.startsWith('/person')"><a routerLink="/persons">All Persons</a></li>
+                <li [class.active]="url==='/developers'">  <a routerLink="/developers" >Developers</a></li>
             </ul>
-           <router-outlet></router-outlet> `
+            <div style='margin-top: 10px;'>
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+           `
     }
 )
 export class AppComponent {

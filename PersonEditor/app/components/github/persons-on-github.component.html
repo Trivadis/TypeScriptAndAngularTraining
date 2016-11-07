@@ -1,0 +1,35 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        {{pageTitle}}
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item" 
+        [class.active]="person.githubaccount === currentUser" 
+        *ngFor="let person of personList" 
+        (click)="onLoadGithubDetails(person)">{{person.firstname}} (Github: {{person.githubaccount}})</li>
+    </ul>
+
+    <div *ngIf="myuser">
+        <div>
+            <img class="img-rounded" [src]="myuser?.avatar_url" width="200" height="200" />
+        </div>
+        <div>
+            {{errorMessage}}
+        </div>
+
+        <table class="table-striped">
+            <thead>
+                <tr>
+                    <th>Repository</th>
+                    <th>Language</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let repo of myrepos">
+                    <td>{{repo.name}}</td>
+                    <td>{{repo.language}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -14,7 +14,7 @@ let persons: Array<Person> = [
     { id: 2, firstname: "Lara", lastname: "Croft" },
     { id: 3, firstname: "Thomas", lastname: "Huber", githubaccount: "thomasclaudiushuber" },
     { id: 4, firstname: "Duke", lastname: "Nukem" },
-    { id: 5, firstname: "Thomas", lastname: "Gassmann" },
+    { id: 5, firstname: "Thomas", lastname: "Gassmann", githubaccount: "gassmannT" },
     { id: 6, firstname: "Thomas", lastname: "Bandixen", githubaccount: "tbandixen" },
 ];
 
