@@ -1,4 +1,4 @@
-import {Person} from './../model/person';
+import {Person} from '../app/model/person';
 
 export var PERSONS:Person[]=[
     new Person(1,'Thomas','Huber', 'thomasclaudiushuber'),

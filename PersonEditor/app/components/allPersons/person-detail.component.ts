@@ -18,7 +18,6 @@ export class PersonDetailComponent implements OnInit {
     private _personService: PersonService,
     private _route: ActivatedRoute,
     private _router: Router) {
-      console.log("hallo welt");
   }
 
   ngOnInit(): void {
@@ -35,7 +34,6 @@ export class PersonDetailComponent implements OnInit {
 
   onSave() {
     this._personService.savePerson(this.person);
-    this._router.navigate(['/products']);
-    //window.history.back();
+    this._router.navigate(['/persons']);
   }
 }

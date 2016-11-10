@@ -1,5 +1,5 @@
 "use strict";
-var person_1 = require('./../model/person');
+var person_1 = require('../app/model/person');
 exports.PERSONS = [
     new person_1.Person(1, 'Thomas', 'Huber', 'thomasclaudiushuber'),
     new person_1.Person(2, 'Julia', 'Roberts'),
