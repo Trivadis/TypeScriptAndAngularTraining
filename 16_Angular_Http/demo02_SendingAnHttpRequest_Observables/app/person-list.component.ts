@@ -21,7 +21,7 @@ import { PersonDataService } from './person-data.service';
     }
 )
 export class PersonListComponent implements OnInit {
-    
+
     persons: Person[];
     selectedPerson: Person;
 
@@ -29,8 +29,8 @@ export class PersonListComponent implements OnInit {
 
     ngOnInit() {
         this._personDataService.loadPersons()
-        .subscribe( p=>this.persons = p,
-           error=> alert(error));
+            .subscribe(p => this.persons = p,
+            error => alert(error));
     }
 
     onPersonClick(person: Person) {

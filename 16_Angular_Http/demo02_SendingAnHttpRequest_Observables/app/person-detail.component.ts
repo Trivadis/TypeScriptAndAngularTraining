@@ -1,10 +1,10 @@
-import {Component, Input} from '@angular/core';
-import {Person} from './person';
+import { Component, Input } from '@angular/core';
+import { Person } from './person';
 
 @Component(
-    {
-        selector:'person-detail',
-        template:`   
+  {
+    selector: 'person-detail',
+    template: `   
          <div *ngIf="person">
 		     Selected Person: 
            <div>
@@ -17,13 +17,12 @@ import {Person} from './person';
            </div>
            <div>
              <label for="githubaccount" >Github: </label>
-             <input id="githubaccount" type="text" [(ngModel)]="person.githubusername"/>
+             <input id="githubaccount" type="text" [(ngModel)]="person.githubaccount"/>
            </div>
         </div>`
-    }
+  }
 )
-export class PersonDetailComponent
-{
-    @Input()
-    person:Person;
+export class PersonDetailComponent {
+  @Input()
+  person: Person;
 }

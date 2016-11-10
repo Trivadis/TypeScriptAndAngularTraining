@@ -19,7 +19,7 @@ var PersonDetailComponent = (function () {
     PersonDetailComponent = __decorate([
         core_1.Component({
             selector: 'person-detail',
-            template: "   \n         <div *ngIf=\"person\">\n\t\t     Selected Person: \n           <div>\n             <label for=\"firstname\" >Firstname: </label>\n             <input id=\"firstname\" type=\"text\" [(ngModel)]=\"person.firstname\"/>\n           </div> \n           <div>\n             <label for=\"lastname\" >Firstname: </label>\n             <input id=\"lastname\" type=\"text\" [(ngModel)]=\"person.lastname\"/>\n           </div>\n           <div>\n             <label for=\"githubaccount\" >Github: </label>\n             <input id=\"githubaccount\" type=\"text\" [(ngModel)]=\"person.githubusername\"/>\n           </div>\n        </div>"
+            template: "   \n         <div *ngIf=\"person\">\n\t\t     Selected Person: \n           <div>\n             <label for=\"firstname\" >Firstname: </label>\n             <input id=\"firstname\" type=\"text\" [(ngModel)]=\"person.firstname\"/>\n           </div> \n           <div>\n             <label for=\"lastname\" >Firstname: </label>\n             <input id=\"lastname\" type=\"text\" [(ngModel)]=\"person.lastname\"/>\n           </div>\n           <div>\n             <label for=\"githubaccount\" >Github: </label>\n             <input id=\"githubaccount\" type=\"text\" [(ngModel)]=\"person.githubaccount\"/>\n           </div>\n        </div>"
         }), 
         __metadata('design:paramtypes', [])
     ], PersonDetailComponent);
