@@ -1,10 +1,10 @@
-import {Component, Input} from '@angular/core';
-import {Person} from './person';
+import { Component, Input } from '@angular/core';
+import { Person } from './person';
 
 @Component(
-    {
-        selector:'person-list',
-        template:`<table>
+  {
+    selector: 'person-list',
+    template: `<table>
              <tr>
                <th>Firstname</th>
                <th>Lastname</th>
@@ -16,23 +16,21 @@ import {Person} from './person';
                <td>{{person.githubaccount}}</td>
              </tr>
            </table>`
-               }
+  }
 )
-export class PersonListComponent
-{
-    persons:Person[]=PERSONS;   
-    selectedPerson:Person;
+export class PersonListComponent {
+  persons: Person[] = PERSONS;
+  selectedPerson: Person;
 
-    onPersonClick(person:Person)
-    {
-        this.selectedPerson = person;
-    }
+  onPersonClick(person: Person) {
+    this.selectedPerson = person;
+  }
 }
 
 
-let PERSONS:Person[] = [
-  {firstname:'Silvester', lastname:'Stallone'},
-  {firstname:'Thomas', lastname:'Bandixen',githubaccount:'tbandixen'},
-  {firstname:'Thomas', lastname:'Huber',githubaccount:'thomasclaudiushuber'},
-  {firstname:'Bruce', lastname:'Willis'},
-  {firstname:'Lara', lastname:'Croft'}];
+let PERSONS: Person[] = [
+  { firstname: 'Silvester', lastname: 'Stallone' },
+  { firstname: 'Thomas', lastname: 'Bandixen', githubaccount: 'tbandixen' },
+  { firstname: 'Thomas', lastname: 'Huber', githubaccount: 'thomasclaudiushuber' },
+  { firstname: 'Bruce', lastname: 'Willis' },
+  { firstname: 'Lara', lastname: 'Croft' }];
