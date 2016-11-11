@@ -1,3 +1,7 @@
+//TODO: 1. Map the view to a Person instead of string
+//      2. Add TwoWay Data Binding
+//      3. Something is missing => To use ngModel you must import FormsModule in the Root Module (AppModule)
+
 import { Component } from '@angular/core';
 
 @Component({
