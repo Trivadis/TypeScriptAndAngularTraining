@@ -4,7 +4,7 @@ import { PersonDetailComponent } from './components/allPersons/person-detail.com
 import { PersonListComponent } from './components/allPersons/person-list.component';
 import { PersonService } from './services/person.service';
 import { PersonsOnGithubComponent } from './components/github/persons-on-github.component';
-import {PersonDetailGuard} from './components/allPersons/person-guard.service';
+import {PersonDetailGuard} from './services/person-guard.service';
 
 const routes: Routes = [
   { path: 'persons', component: PersonListComponent },

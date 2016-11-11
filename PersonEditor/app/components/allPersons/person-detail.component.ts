@@ -33,7 +33,12 @@ export class PersonDetailComponent implements OnInit {
   }
 
   onSave() {
-    this._personService.savePerson(this.person);
-    this._router.navigate(['/persons']);
+    this._personService.savePerson(this.person).subscribe(res =>
+      this.onBack()
+    );
+  }
+
+  onBack(){
+      this._router.navigate(['/persons'])
   }
 }

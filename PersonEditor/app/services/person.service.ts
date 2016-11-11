@@ -32,9 +32,6 @@ export class PersonService {
     }
 
     savePerson(person: Person) {
-        // var dbPerson = this.persons.filter(f => f.id == person.id)[0];
-        // dbPerson.firstname = person.firstname;
-        // dbPerson.lastname = person.lastname;
-        // dbPerson.githubaccount = person.githubaccount;
+        return this._http.put('http://localhost:8180/api/persons', person);
     }
 }
