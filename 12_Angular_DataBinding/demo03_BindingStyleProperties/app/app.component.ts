@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   styles: [`.active{
      background-color:green;
   }`],
-  template: `<h1>Size of red rectangle is {{number}}px</h1>
+  template: `<h1>Size of red rectangle is {{width}}px</h1>
             <div>Type in the size</div>
             <input type="text" [(ngModel)]="width">
             <div style="height:50px;background-color:red;" [style.width.px]="width" ></div>`
