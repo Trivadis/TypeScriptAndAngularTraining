@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<title>Custom Decorators</title>
+	<title>Module Import and Export</title>
 	<script src="node_modules/systemjs/dist/system.js"></script>
 </head>
 
@@ -13,8 +13,7 @@
             baseURL: '/',
             defaultJSExtensions: true
         });
-        System.import('./main.js').then(function(){console.log('loaded');
-        }).catch(function(err){ console.error(err); });
+        System.import('./main.js').then(function(){console.log('loaded');}).catch(function(err){ console.error(err); });
     </script>
 </body>
 
