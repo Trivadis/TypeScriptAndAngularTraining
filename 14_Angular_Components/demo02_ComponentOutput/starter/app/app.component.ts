@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {Person} from './person';
+import { Person } from './person';
 
 @Component({
   selector: 'my-app',
@@ -25,19 +25,18 @@ import {Person} from './person';
             `
 })
 export class AppComponent {
-   persons:Person[]=PERSONS;
-   selectedPerson:Person;
+  persons: Person[] = PERSONS;
+  selectedPerson: Person;
 
-   onPersonClick(person:Person)
-   {
-     this.selectedPerson = person;
-   }
+  onPersonClick(person: Person) {
+    this.selectedPerson = person;
+  }
 }
 
-var PERSONS:Person[] = [
-  {firstname:'Silvester', lastname:'Stallone'},
-  {firstname:'Thomas', lastname:'Bandixen',githubaccount:'tbandixen'},
-  {firstname:'Thomas', lastname:'Huber',githubaccount:'thomasclaudiushuber'},
-  {firstname:'Bruce', lastname:'Willis'},
-  {firstname:'Lara', lastname:'Croft'}];
+var PERSONS: Person[] = [
+  { firstname: 'Silvester', lastname: 'Stallone' },
+  { firstname: 'Thomas', lastname: 'Bandixen', githubaccount: 'tbandixen' },
+  { firstname: 'Thomas', lastname: 'Huber', githubaccount: 'thomasclaudiushuber' },
+  { firstname: 'Bruce', lastname: 'Willis' },
+  { firstname: 'Lara', lastname: 'Croft' }];
 

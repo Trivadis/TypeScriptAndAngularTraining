@@ -1,5 +1,5 @@
 
-import { Person } from './../../model/person';
+import { Person } from './../model/person';
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({

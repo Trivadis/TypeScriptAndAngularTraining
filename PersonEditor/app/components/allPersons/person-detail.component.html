@@ -1,5 +1,5 @@
 <h2>PersonDetail: {{person?.firstname}}</h2>
-<form name="personDetails" (ngSubmit)="onSave()">
+<form name="personForm" (ngSubmit)="onSave()">
     <div *ngIf="person">
         <div>
             <label for="inputFirstname">Firstname: </label>
@@ -7,13 +7,13 @@
         </div>
         <div>
             <label for="inputLastName">LastName: </label>
-            <input id="inputLastName" name="inputLastName" class="form-control" type="text" [(ngModel)]="person.lastname" />
+            <input id="inputLastName"name="inputLastName" class="form-control" type="text" [(ngModel)]="person.lastname" />
         </div>
         <div>
             <label for="inputGithub">Github account: </label>
-            <input id="inputGithub" name="inputGithub" class="form-control" type="text" [(ngModel)]="person.githubaccount" />
+            <input id="inputGithub"name="inputGithub" class="form-control" type="text" [(ngModel)]="person.githubaccount" />
         </div>
         <button type="submit" class="btn btn-primary">Save</button>
-        <button class="btn" routerLink="/persons">Cancel</button>
+        <button type="button" class="btn" (click)="onBack()">Cancel</button>
     </div>
 </form>

@@ -1,6 +1,7 @@
 {
   "name": "personeditor",
   "version": "1.0.0",
+  "author": "Trivadis",
   "scripts": {
     "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
     "lite": "lite-server",

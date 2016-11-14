@@ -4,7 +4,7 @@ class NameDisplayer {
    Load(){
        loadData(
            (name:string)=>{this.loadedName=name}
-           );       
+        );       
    }
 }
 

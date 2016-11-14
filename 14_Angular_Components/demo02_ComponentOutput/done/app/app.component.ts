@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {Person} from './person';
+import { Person } from './person';
 
 @Component({
   selector: 'my-app',
@@ -20,28 +20,25 @@ import {Person} from './person';
            <person-detail [person]="selectedPerson" (remove)="onRemove($event)"></person-detail>`
 })
 export class AppComponent {
-   persons:Person[]=PERSONS;
-   selectedPerson:Person;
+  persons: Person[] = PERSONS;
+  selectedPerson: Person;
 
-   onPersonClick(person:Person)
-   {
-     this.selectedPerson = person;
-   }
+  onPersonClick(person: Person) {
+    this.selectedPerson = person;
+  }
 
-   onRemove(person:Person)
-   {
-     var index = this.persons.indexOf(person);
-     if(index>-1)
-     {
-       this.persons.splice(index,1);
-     }
-   }
+  onRemove(person: Person) {
+    var index = this.persons.indexOf(person);
+    if (index > -1) {
+      this.persons.splice(index, 1);
+    }
+  }
 }
 
-var PERSONS:Person[] = [
-  {firstname:'Silvester', lastname:'Stallone'},
-  {firstname:'Thomas', lastname:'Bandixen',githubaccount:'tbandixen'},
-  {firstname:'Thomas', lastname:'Huber',githubaccount:'thomasclaudiushuber'},
-  {firstname:'Bruce', lastname:'Willis'},
-  {firstname:'Lara', lastname:'Croft'}];
+var PERSONS: Person[] = [
+  { firstname: 'Silvester', lastname: 'Stallone' },
+  { firstname: 'Thomas', lastname: 'Bandixen', githubaccount: 'tbandixen' },
+  { firstname: 'Thomas', lastname: 'Huber', githubaccount: 'thomasclaudiushuber' },
+  { firstname: 'Bruce', lastname: 'Willis' },
+  { firstname: 'Lara', lastname: 'Croft' }];
 
