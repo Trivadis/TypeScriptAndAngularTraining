@@ -1,9 +1,9 @@
 namespace Persons {
-   export interface Name{
-       getFullName():string;
-   }
+    export interface Name {
+        getFullName(): string;
+    }
 
-    export class Person implements Name{
+    export class Person implements Name {
         constructor(public firstName: string, public lastName: string) { }
 
         getFullName() {
@@ -12,6 +12,6 @@ namespace Persons {
     }
 }
 
-var p:Persons.Name = new Persons.Person("Thomas", "Huber");
+var p: Persons.Name = new Persons.Person("Thomas", "Huber");
 
 console.log(p.getFullName());
