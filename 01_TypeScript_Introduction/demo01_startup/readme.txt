@@ -1,5 +1,5 @@
-1. 	Start Visual Studio Code from the starter directory with «code .».
-	Note: You don’t have any tooling for the .js-file. And you can even call it with just an ‘x’:
+1. 	Start Visual Studio Code from the starter directory with "code .".
+	Note: You don't have any tooling for the .js-file. And you can even call it with just an "x":
 	Add sortFriendsByName ('x'); at the end of the file
 
 
@@ -7,7 +7,7 @@
 
 
 3.	Introduce the Friend-interface and make the parameter of the method a Friend-array
-	interface Friend{
+	interface IFriend {
    		firstname:string;
    		lastname:string,
 	}
@@ -15,15 +15,14 @@
 
 4.	Note that you have two errors now:
 	a.	One where you call localCompare instead of localeCompare
-	b.	One where you pass the ‘x’ to the sortFriendsByName-method
+	b.	One where you pass the "x" to the sortFriendsByName-method
 
 
 5.	Fix the errors and note that you get intellisense when you access the friend type to grab its firstname-property
 
 
 6.	Use a lambda function
-	result.sort((x,y)=>
-    	{
+	result.sort((x,y)=> {
         	return x.firstname.localeCompare(y.firstname);
     	});
 
@@ -50,7 +49,7 @@
     		}
 	}
 
-	Look at the output. It’s the typical JavaScript-prototype stuff to create some kind of class
+	Look at the output. Itï¿½s the typical JavaScript-prototype stuff to create some kind of class
 
 
 10.	Add a tsconfig.json-file by going to the console and type
@@ -66,6 +65,4 @@
 
 
 Note that the generated code has now a real class and the lambda-function, as these features are part of ecmascript2015/ES6. 
-You can change it back to “es5” and the generated code will be again ES5-Standard.
-
-
+You can change it back to "es5" and the generated code will be again ES5-Standard.
