@@ -5,7 +5,6 @@ function Format(myPrefix: string) {
 }
 
 class Person {
-
     constructor(name: string) { this.name = name; }
     @Format("Dear")
     name: string = "Thomas";
