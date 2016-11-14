@@ -1,4 +1,4 @@
-1. 	Start Visual Studio Code from the starter directory with "code .".
+﻿1. 	Start Visual Studio Code from the starter directory with "code .".
 	Note: You don't have any tooling for the .js-file. And you can even call it with just an "x":
 	Add sortFriendsByName ('x'); at the end of the file
 
@@ -8,8 +8,8 @@
 
 3.	Introduce the Friend-interface and make the parameter of the method a Friend-array
 	interface IFriend {
-   		firstname:string;
-   		lastname:string,
+   		firstName:string;
+   		lastName:string,
 	}
 
 
@@ -23,12 +23,12 @@
 
 6.	Use a lambda function
 	result.sort((x,y)=> {
-        	return x.firstname.localeCompare(y.firstname);
+        	return x.firstName.localeCompare(y.firstName);
     	});
 
 
 7.	Note that you also get intellisense when you pass arguments to the function
-	sortFriendsByName([{firstname:"Thomas",lastname:"Gassmann" }]);
+	sortFriendsByName([{firstName:"Thomas",lastname:"Gassmann" }]);
 
 
 8.	Open a cmd (or command window in Visual Studio Code CTRL+!) and type 
@@ -49,7 +49,7 @@
     		}
 	}
 
-	Look at the output. It�s the typical JavaScript-prototype stuff to create some kind of class
+	Look at the output. It's the typical JavaScript-prototype stuff to create some kind of class
 
 
 10.	Add a tsconfig.json-file by going to the console and type
