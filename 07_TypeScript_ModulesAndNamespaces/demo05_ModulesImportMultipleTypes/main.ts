@@ -7,6 +7,6 @@
 
 // 2. Import the full module
 import * as Personas from './persons';
-var p:Personas.Names = new Personas.Person("Thomas","Huber");
+var p: Personas.Names = new Personas.Person("Thomas", "Huber");
 console.log(JSON.stringify(p));
 

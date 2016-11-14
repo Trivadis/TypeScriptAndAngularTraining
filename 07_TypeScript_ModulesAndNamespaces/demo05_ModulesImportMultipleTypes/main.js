@@ -1,4 +1,9 @@
+// 1. Import separate types
 "use strict";
-var persons_1 = require("./persons");
-var p = new persons_1.Friend("Thomas", "Huber");
+// import { Person , Names } from './persons';
+// var p:Names = new Person("Thomas","Huber");
+// console.log(JSON.stringify(p));
+// 2. Import the full module
+var Personas = require('./persons');
+var p = new Personas.Person("Thomas", "Huber");
 console.log(JSON.stringify(p));

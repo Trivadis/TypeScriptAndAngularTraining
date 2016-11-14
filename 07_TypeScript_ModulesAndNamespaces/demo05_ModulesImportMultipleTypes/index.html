@@ -2,19 +2,18 @@
 <html>
 
 <head>
-	<title>Custom Decorators</title>
-	<script src="node_modules/systemjs/dist/system.js"></script>
+    <title>Custom Decorators</title>
+    <script src="node_modules/systemjs/dist/system.js"></script>
 </head>
 
 <body>
-	<canvas id="canv">Canvas here</canvas>
-	<script>
+    <canvas id="canv">Canvas here</canvas>
+    <script>
         SystemJS.config({
             baseURL: '/',
             defaultJSExtensions: true
         });
-        System.import('./main.js').then(function(){console.log('loaded');
-        }).catch(function(err){ console.error(err); });
+        System.import('./main.js').then(function(){console.log('loaded');}).catch(function(err){ console.error(err); });
     </script>
 </body>
 

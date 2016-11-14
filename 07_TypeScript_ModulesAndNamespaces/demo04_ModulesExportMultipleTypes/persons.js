@@ -5,5 +5,5 @@ var Person = (function () {
         this.lastName = lastName;
     }
     return Person;
-}());
+} ());
 exports.Friend = Person;

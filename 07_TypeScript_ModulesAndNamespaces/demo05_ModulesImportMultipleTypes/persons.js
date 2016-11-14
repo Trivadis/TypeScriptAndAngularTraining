@@ -6,4 +6,4 @@ var Person = (function () {
     }
     return Person;
 }());
-exports.Friend = Person;
+exports.Person = Person;

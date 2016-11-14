@@ -1,5 +1,5 @@
-import { Friend , Names } from './persons';
+import { Friend, Names } from './persons';
 
-var p:Names = new Friend("Thomas","Huber");
+var p: Names = new Friend("Thomas", "Huber");
 
 console.log(JSON.stringify(p));
