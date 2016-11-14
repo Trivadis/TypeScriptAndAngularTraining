@@ -10,7 +10,7 @@
 4.	Start the TypeScript-watcher via “tsc -w”-command
 
 
-5.	Introduce a Friend-interface with the properties firstName and lastName and use it for the function’s parameter
+5.	Introduce a Friend-interface with the properties firstName and lastName and use it for the function's parameter
     interface Friend{
         firstName:string;
         lastName:string;
@@ -19,8 +19,7 @@
     function getFullName(friend:Friend)
 
 
-    Note that interfaces in TypeScript usually don’t use the I-prefix like used in C#. But if you want, you could still use it)
-
+    Note that interfaces in TypeScript usually don't use the I-prefix like used in C#. But if you want, you could still use it)
 
 
 6.	Look at the errors TypeScript shows you.
@@ -32,7 +31,7 @@
         lastName?:string;
     }
 
-    Now note that the only error you get is the one where firstName is misspelled with a lowercase “n”. 
+    Now note that the only error you get is the one where firstName is misspelled with a lowercase "n". 
     Now you can fix this:
     fullName = getFullName({firstName:"Bill"});
 
