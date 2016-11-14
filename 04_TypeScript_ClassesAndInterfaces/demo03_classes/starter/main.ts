@@ -1,5 +1,5 @@
 // TODO: Create a class that takes
-//       firstname, lastname as constructor-parameter
+//       firstname, lastName as constructor-parameter
 //       and that has a getFullName-method
 
 interface Friend {

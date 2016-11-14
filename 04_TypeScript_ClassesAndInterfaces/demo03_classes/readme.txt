@@ -1,13 +1,11 @@
 1.	Take a look at the main.ts file. 
 
 
-
 2. Create a Friend class with two properties. One should be optional
     class Friend {
         firstName: string;
         lastName?: string;
     }
-
 
 
 3. Add a constructor to the Friend class and assign the constructor parameters to the local members.
@@ -18,12 +16,10 @@
     }
 
 
-
 4. Add the "getFullName" method to the class
     getFullName(): string {
          return `${this.firstName} ${this.lastName}`;
     }
-
 
 
 5. Change the calling code 
