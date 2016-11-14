@@ -7,3 +7,4 @@ function getFullName(firstName) {
 }
 console.log(getFullName("Thomas"));
 console.log(getFullName("Thomas", "Claudius", "Huber"));
+console.log(getFullName.apply(void 0, ["Thomas"].concat(["Bandixen", "Gassmann"]))); // just ["Bandixen", "Gassmann"] wouldn't work 
