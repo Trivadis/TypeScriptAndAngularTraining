@@ -9,4 +9,3 @@ class Person {
 let p = new Person("Thomas");
 let personName = p.name; // OK
 p.name = "Angular"; // Error
-
