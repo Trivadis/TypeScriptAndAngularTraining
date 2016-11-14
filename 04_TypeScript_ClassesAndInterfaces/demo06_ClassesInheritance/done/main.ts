@@ -1,18 +1,14 @@
-class Animal
-{
-    constructor(public name:string){}
+class Animal {
+    constructor(public name: string) { }
 }
-class Frog extends Animal
-{
-    constructor(name:string,public distance:number)
-    {
-      super(name);
+class Frog extends Animal {
+    constructor(name: string, public distance: number) {
+        super(name);
     }
-    jump()
-    {
+    jump() {
         console.log(`the frog ${this.name} is jumping ${this.distance}m`);
     }
 }
 
-let frog = new Frog("Kermit",1);
+let frog = new Frog("Kermit", 1);
 frog.jump();
