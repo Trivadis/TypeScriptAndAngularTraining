@@ -9,15 +9,15 @@ function writeOutput() {
     })(Dock || (Dock = {}));
     ;
     var dock = Dock.Left;
+    // number to enum
+    // dock = 3;
+    // string to enum
+    // dock = Dock["Top"];
     // enum to number
     var val = dock;
     // enum to string
     var name = Dock[dock]; // or Dock[1];
     document.write("dock value: " + val + "<br>");
     document.write("dock name: " + name + "<br>");
-    // number to enum
-    dock = 3;
-    // string to enum
-    dock = Dock["Top"];
 }
 writeOutput();

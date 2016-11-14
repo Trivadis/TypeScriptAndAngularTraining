@@ -4,6 +4,12 @@ function writeOutput() {
 
     let dock: Dock = Dock.Left;
 
+    // number to enum
+    // dock = 3;
+
+    // string to enum
+    // dock = Dock["Top"];
+
     // enum to number
     let val: number = dock;
 
@@ -12,12 +18,6 @@ function writeOutput() {
 
     document.write(`dock value: ${val}<br>`);
     document.write(`dock name: ${name}<br>`);
-
-    // number to enum
-    dock = 3;
-
-    // string to enum
-    dock = Dock["Top"];
 }
 
 writeOutput();
