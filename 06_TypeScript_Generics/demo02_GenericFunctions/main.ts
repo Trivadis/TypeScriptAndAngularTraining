@@ -6,4 +6,3 @@ function LogToConsole<T>(item: T): T {
 
 let firstname: string = LogToConsole("Thomas");
 let luckyNumber: number = LogToConsole(13);
-

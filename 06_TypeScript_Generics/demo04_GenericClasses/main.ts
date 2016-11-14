@@ -1,21 +1,17 @@
-interface IRepository<T>
-{
-  Load():T;
-  Save(item:T):void;
-
+interface IRepository<T> {
+  Load(): T;
+  Save(item: T): void;
 }
 
-class GenericRepo<T> implements IRepository<T>
-{
-  private _store:T;
-  constructor(initialValue:T)
-  {
-   this._store=initialValue;
+class GenericRepo<T> implements IRepository<T> {
+  private _store: T;
+  constructor(initialValue: T) {
+    this._store = initialValue;
   }
-  Load():T{
+  Load(): T {
     return this._store;
   }
-  Save(item:T):void{ this._store = item;}
+  Save(item: T): void { this._store = item; }
 }
 
 let repo = new GenericRepo<number>(5);

@@ -1,14 +1,14 @@
-var NumberRepo = (function () {
-    function NumberRepo() {
-        this._number = 5;
+var GenericRepo = (function () {
+    function GenericRepo(initialValue) {
+        this._store = initialValue;
     }
-    NumberRepo.prototype.Load = function () {
-        return this._number;
+    GenericRepo.prototype.Load = function () {
+        return this._store;
     };
-    NumberRepo.prototype.Save = function (item) { this._number = item; };
-    return NumberRepo;
+    GenericRepo.prototype.Save = function (item) { this._store = item; };
+    return GenericRepo;
 }());
-var repo = new NumberRepo();
+var repo = new GenericRepo(5);
 console.log(repo.Load());
 repo.Save(13);
 console.log(repo.Load());

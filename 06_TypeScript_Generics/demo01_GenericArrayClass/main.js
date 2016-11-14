@@ -1,9 +1,4 @@
-function getFullName(firstName, lastName) {
-    if (lastName)
-        return firstName + " " + lastName;
-    else
-        return firstName;
-}
-console.log(getFullName("Thomas"));
-;
-console.log(getFullName("Thomas", "Huber"));
+var numberArray = new Array();
+numberArray.push(1);
+numberArray.push(2);
+numberArray.push("Hello"); // Error, not a number

@@ -2,8 +2,7 @@ interface IName {
   name: string;
 }
 
-class GenericPrinter<T extends IName>
-{
+class GenericPrinter<T extends IName> {
   print(item: T) {
     console.log(item.name);
   }
