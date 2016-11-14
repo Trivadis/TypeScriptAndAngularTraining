@@ -1,5 +1,3 @@
-var p = new Persons.Person("Thomas", "Huber");
-console.log(p.getFullName());
 var Persons;
 (function (Persons) {
     var Person = (function () {
@@ -14,3 +12,6 @@ var Persons;
     }());
     Persons.Person = Person;
 })(Persons || (Persons = {}));
+/// <reference path="./persons.ts" />
+var p = new Persons.Person("Thomas", "Huber");
+console.log(p.getFullName());
