@@ -4,7 +4,6 @@
 2.	Run the application and note that the output is 5 5 5 5 5 and not 0 1 2 3 4 5
 
 
-
 3.	Use a JavaScript-workaround: an inline function expression
     function writeToBody()
     {
@@ -20,7 +19,6 @@
     }
 
 Note that the output is now 0 1 2 3 4, as the inline function expression is called immediately and the parameter is scoped to the function expression.
-
 
 
 4.	Remove the function-expression again and use let instead of var
