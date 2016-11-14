@@ -8,17 +8,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var editordata_decorator_1 = require("./editordata-decorator");
+var editordata_decorator_1 = require('./editordata-decorator');
 var Application = (function () {
     function Application() {
     }
+    Application = __decorate([
+        editordata_decorator_1.EditorData({
+            firstname: "Thomas",
+            lastname: "Huber"
+        }), 
+        __metadata('design:paramtypes', [])
+    ], Application);
     return Application;
 }());
-Application = __decorate([
-    editordata_decorator_1.EditorData({
-        firstname: "Thomas",
-        lastname: "Huber"
-    }),
-    __metadata("design:paramtypes", [])
-], Application);
 exports.Application = Application;

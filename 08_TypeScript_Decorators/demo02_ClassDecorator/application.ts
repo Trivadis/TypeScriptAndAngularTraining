@@ -7,4 +7,3 @@ import { EditorData } from './editordata-decorator';
 export class Application {
 
 }
-

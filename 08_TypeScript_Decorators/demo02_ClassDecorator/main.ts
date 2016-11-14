@@ -7,5 +7,3 @@ let metadata = Reflect.getMetadata(EditorDataMetadataKey, Application) as Editor
 
 console.log(metadata.firstname);
 console.log(metadata.lastname);
-
-
