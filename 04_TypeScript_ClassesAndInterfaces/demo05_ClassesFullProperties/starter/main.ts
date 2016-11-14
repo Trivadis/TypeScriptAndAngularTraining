@@ -1,11 +1,10 @@
 class Friend {
 
     // TODO: Add Accessors for the firstName property, 
-	//       so that it logs to the console whenever it is set or get
-    firstName:string
-    
-    constructor(firstName:string)
-    {
+    //       so that it logs to the console whenever it is set or get
+    firstName: string
+
+    constructor(firstName: string) {
         this.firstName = firstName;
     }
 }
