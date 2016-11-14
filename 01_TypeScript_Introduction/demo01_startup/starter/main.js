@@ -1,4 +1,4 @@
-function sortFriendsByFirstName(friends) {
+function sortFriendsByName(friends) {
     var result = friends.slice(0);
 
     result.sort(function (x, y) {
