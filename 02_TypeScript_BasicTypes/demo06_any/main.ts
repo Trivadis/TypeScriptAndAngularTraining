@@ -8,14 +8,14 @@ function writeOutput() {
     // this has no intellisense for length in the tooling
     let length: number = name.length;
 
-    // and this type in "lenth" wouldn't throw an error at compile-time 
+    // and this type in "lenth" would throw an error at compile-time 
     // length = name.lenth;
 
     // Casting with as
     length = (name as string).length;
 
     // This would give you an error with the "lenth"-typo
-    // length= (name as string).lenth;
+    // length = (name as string).lenth;
 
     // Casting with <>
     length = (<string>name).length;
