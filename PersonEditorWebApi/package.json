@@ -4,6 +4,7 @@
   "description": "Simple Web-API to use in sample projects",
   "main": "index.js",
   "scripts": {
+    "start": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Thomas Claudius Huber",

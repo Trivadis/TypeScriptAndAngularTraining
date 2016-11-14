@@ -10,6 +10,8 @@ import 'rxjs/Rx';
 export class PersonService {
     // private persons: Observable<Person[]>;
 
+    private _baseUrl: string = "http://localhost:8180/api";
+
     constructor(private _http: Http) {
         // this.persons = PERSONS;
         // this.persons = this._http.get('http://localhost:8180/api/persons')
@@ -17,24 +19,21 @@ export class PersonService {
         // .subscribe(data => this.persons = data.json());
     }
     getPersons(): Observable<Person[]> {
-        return this._http.get('http://localhost:8180/api/persons')
+        return this._http.get(this._baseUrl + "/persons")
             .map(res => <Person[]>res.json());
     }
     getPersonsWithGithubAccount(): Observable<Person> {
-        return this._http.get('http://localhost:8180/api/persons')
+        return this._http.get(this._baseUrl + "/persons")
             .flatMap(res => <Person[]>res.json())
             .filter(p => p.githubaccount != null && p.githubaccount != "");
     }
 
     getPersonById(personId: number): Observable<Person> {
-        return this._http.get('http://localhost:8180/api/persons/' + personId)
+        return this._http.get(this._baseUrl + "/persons/" + personId)
             .map(res => <Person>res.json());
     }
 
     savePerson(person: Person) {
-        // var dbPerson = this.persons.filter(f => f.id == person.id)[0];
-        // dbPerson.firstname = person.firstname;
-        // dbPerson.lastname = person.lastname;
-        // dbPerson.githubaccount = person.githubaccount;
+        return this._http.put(this._baseUrl + "/persons", person);
     }
 }

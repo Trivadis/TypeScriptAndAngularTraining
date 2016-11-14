@@ -1,14 +1,11 @@
-var NumberRepo = (function () {
-    function NumberRepo() {
-        this._number = 5;
+var GenericPrinter = (function () {
+    function GenericPrinter() {
     }
-    NumberRepo.prototype.Load = function () {
-        return this._number;
+    GenericPrinter.prototype.print = function (item) {
+        console.log(item.name);
     };
-    NumberRepo.prototype.Save = function (item) { this._number = item; };
-    return NumberRepo;
+    return GenericPrinter;
 }());
-var repo = new NumberRepo();
-console.log(repo.Load());
-repo.Save(13);
-console.log(repo.Load());
+var printer = new GenericPrinter();
+printer.print({ name: "Thomas" });
+// printer.print("Hello"); // Error, no name-property

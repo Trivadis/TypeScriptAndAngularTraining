@@ -1,16 +1,19 @@
 <h2>PersonDetail: {{person?.firstname}}</h2>
-<div *ngIf="person">
-    <div>
-        <label for="inputFirstname">Firstname: </label>
-        <input id="inputFirstname" class="form-control" type="text" [(ngModel)]="person.firstname" />
+<form name="personDetails" (ngSubmit)="onSave()">
+    <div *ngIf="person">
+        <div>
+            <label for="inputFirstname">Firstname: </label>
+            <input id="inputFirstname" name="inputFirstname" class="form-control" type="text" [(ngModel)]="person.firstname" />
+        </div>
+        <div>
+            <label for="inputLastName">LastName: </label>
+            <input id="inputLastName" name="inputLastName" class="form-control" type="text" [(ngModel)]="person.lastname" />
+        </div>
+        <div>
+            <label for="inputGithub">Github account: </label>
+            <input id="inputGithub" name="inputGithub" class="form-control" type="text" [(ngModel)]="person.githubaccount" />
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+        <button class="btn" routerLink="/persons">Cancel</button>
     </div>
-    <div>
-        <label for="inputLastName">LastName: </label>
-        <input id="inputLastName" class="form-control" type="text" [(ngModel)]="person.lastname" />
-    </div>
-    <div>
-        <label for="inputGithub">Github account: </label>
-        <input id="inputGithub" class="form-control" type="text" [(ngModel)]="person.githubaccount" />
-    </div>
-    <button class="btn btn-primary" (click)="onSave()">Save</button>
-</div>
+</form>

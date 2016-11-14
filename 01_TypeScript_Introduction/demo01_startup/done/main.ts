@@ -6,7 +6,7 @@ interface IFriend {
 class Friend implements IFriend {
     firstname: string;
     lastname: string;
-    
+
     GetFullName(friend: IFriend): string {
         return friend.firstname + ' ' + friend.lastname;
     }
