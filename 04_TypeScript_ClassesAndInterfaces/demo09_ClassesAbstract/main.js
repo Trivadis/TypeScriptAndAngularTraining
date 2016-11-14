@@ -12,7 +12,7 @@ var Person = (function () {
 var Friend = (function (_super) {
     __extends(Friend, _super);
     function Friend() {
-        return _super.apply(this, arguments) || this;
+        _super.apply(this, arguments);
     }
     Friend.prototype.sayHello = function () {
         console.log("Hello my friend " + this.name + ", how are you?");
@@ -20,4 +20,4 @@ var Friend = (function (_super) {
     return Friend;
 }(Person));
 var f = new Friend("Thomas");
-console.log(f.sayHello());
+f.sayHello();

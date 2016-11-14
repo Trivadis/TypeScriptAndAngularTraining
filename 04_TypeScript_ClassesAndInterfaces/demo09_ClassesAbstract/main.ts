@@ -10,4 +10,4 @@ class Friend extends Person {
 }
 
 var f = new Friend("Thomas")
-console.log(f.sayHello());
+f.sayHello();
