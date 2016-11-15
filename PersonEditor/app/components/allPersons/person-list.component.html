@@ -20,8 +20,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor='let person of personList | personFilter: listFilter'
-                            (click)="onEdit(person)">
+                    <tr *ngFor="let person of personList | personFilter: listFilter" (click)="onEdit(person)">
                         <td>{{person.firstname}}</td>
                         <td>{{ person.lastname }}</td>
                         <td>
