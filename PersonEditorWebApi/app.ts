@@ -36,6 +36,7 @@ personRouter.route("/persons")
         person.id = getNextId();
         persons.push(person);
 
+        response.setHeader('Content-Type', 'application/json');
         response.send(JSON.stringify(person));
     })
     .put((request: express.Request, response: express.Response) => {
@@ -53,6 +54,7 @@ personRouter.route("/persons")
         }
     })
     .get((request: express.Request, response: express.Response) => {
+        response.setHeader('Content-Type', 'application/json');
         response.send(JSON.stringify(persons));
     });
 
@@ -64,6 +66,7 @@ personRouter.route("/persons/:id")
         if (filteredPersons.length != 1) {
             response.sendStatus(404);
         } else {
+            response.setHeader('Content-Type', 'application/json');
             response.send(JSON.stringify(filteredPersons[0]));
         }
     });
