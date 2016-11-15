@@ -3,8 +3,9 @@ var NameDisplayer = (function () {
     }
     NameDisplayer.prototype.Load = function () {
         loadData(
-        // Replace this function call with an arrow function, 
-        // so that this is captured and points to the NameDisplayer-instance
+        // Look at the output in the console. loadedName is undefined!!
+        // Replace the function call below with an arrow function, 
+        // so that "this" is captured and points to the NameDisplayer-instance
         function (name) { this.loadedName = name; });
     };
     return NameDisplayer;
