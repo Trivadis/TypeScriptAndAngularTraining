@@ -6,5 +6,5 @@ function getFullName(firstName: string, lastName?: string) {
 }
 
 
-console.log(getFullName("Thomas"));;
+console.log(getFullName("Thomas"));
 console.log(getFullName("Thomas", "Huber"));

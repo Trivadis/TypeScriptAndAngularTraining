@@ -5,5 +5,4 @@ function getFullName(firstName, lastName) {
         return firstName;
 }
 console.log(getFullName("Thomas"));
-;
 console.log(getFullName("Thomas", "Huber"));
