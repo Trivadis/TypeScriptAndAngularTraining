@@ -1,3 +1,6 @@
+03_TypeScript_VarAndLet\demo01_varScoping1
+==========================================
+
 1.	Open the folder in Visual Studio code and look at the main.js-file
 	Note that the x-variable is declared inside the function block. That's because var-declarations are 
 	scoped in their containing function, module or namespace

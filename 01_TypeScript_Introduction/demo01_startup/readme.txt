@@ -1,4 +1,7 @@
-﻿1. 	Start Visual Studio Code from the starter directory with "code .".
+﻿01_TypeScript_Introduction\demo01_startup
+=========================================
+
+1. 	Start Visual Studio Code from the starter directory with "code .".
 	Note: You don't have any tooling for the .js-file. And you can even call it with just an "x":
 	Add sortFriendsByName ('x'); at the end of the file
 

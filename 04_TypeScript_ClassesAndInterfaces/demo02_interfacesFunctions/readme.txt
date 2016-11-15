@@ -1,3 +1,6 @@
+﻿04_TypeScript_ClassesAndInterfaces\demo02_interfacesFunctions
+=============================================================
+
 1.	Take a look at the main.ts file. And especially at the second call of the printFriend-method
     printFriend((val:number)=>{console.log("Number is " + number);}, {firstName:"Bill"});
 

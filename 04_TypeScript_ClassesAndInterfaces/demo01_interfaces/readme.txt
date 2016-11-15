@@ -1,3 +1,6 @@
+﻿04_TypeScript_ClassesAndInterfaces\demo01_interfaces
+====================================================
+
 1.  Take a look at the main.js file and the function getFullName and the calls to it
     Run the application in the browser (open index.html) and view the output in the console
 

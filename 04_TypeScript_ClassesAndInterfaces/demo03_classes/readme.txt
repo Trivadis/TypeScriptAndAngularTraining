@@ -1,3 +1,6 @@
+04_TypeScript_ClassesAndInterfaces\demo03_classes
+=================================================
+
 1.	Take a look at the main.ts file. 
 
 

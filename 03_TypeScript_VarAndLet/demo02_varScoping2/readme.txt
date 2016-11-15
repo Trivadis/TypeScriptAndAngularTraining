@@ -1,3 +1,6 @@
+03_TypeScript_VarAndLet\demo02_varScoping2
+==========================================
+
 1.	Take a look at the main.js file
 
 
