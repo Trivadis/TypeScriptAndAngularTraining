@@ -7,15 +7,15 @@ import { PersonListComponent } from './person-list.component';
 import { ProgrammingLanguagesComponent } from './programming-languages.component';
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, RouterModule.forRoot([  
-     { path: 'languages', component: ProgrammingLanguagesComponent},
-     { path: 'persons', component: PersonListComponent },
-     { path: '', redirectTo:'/persons', pathMatch: 'full'}
-    ])],
+  imports: [BrowserModule, FormsModule, RouterModule.forRoot([
+    { path: 'languages', component: ProgrammingLanguagesComponent },
+    { path: 'persons', component: PersonListComponent },
+    { path: '', redirectTo: '/persons', pathMatch: 'full' }
+  ])],
 
-  declarations: [AppComponent, 
-                 PersonListComponent,
-                 ProgrammingLanguagesComponent],
+  declarations: [AppComponent,
+    PersonListComponent,
+    ProgrammingLanguagesComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
