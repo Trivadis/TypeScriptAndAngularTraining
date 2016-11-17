@@ -5,7 +5,7 @@
         <th>Lastname</th>
         <th>Github</th>
     </tr>
-    <tr *ngFor="let person of persons" (click)="onPersonClick(person)">
+    <tr *ngFor="let person of persons">
         <td>{{person.firstname}}</td>
         <td>{{person.lastname}}</td>
         <td>{{person.githubaccount}}</td>
