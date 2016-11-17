@@ -6,7 +6,6 @@ import { PersonService } from './../../services/person.service';
 
 @Component({
   moduleId: module.id,
-  selector: 'person-detail',
   templateUrl: 'person-detail.component.html'
 })
 export class PersonDetailComponent implements OnInit {

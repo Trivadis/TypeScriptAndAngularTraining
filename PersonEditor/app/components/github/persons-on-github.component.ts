@@ -8,7 +8,6 @@ import { Router } from '@angular/router';
 @Component(
     {
         moduleId: module.id,
-        selector: 'persons-on-github',
         templateUrl: 'persons-on-github.Component.html'
     }
 )
