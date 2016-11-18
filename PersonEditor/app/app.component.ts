@@ -1,7 +1,5 @@
-import { Component, NgZone, Input } from '@angular/core';
-import { PersonListComponent } from './components/allPersons/person-list.component';
-import { PersonDetailComponent } from './components/allPersons/person-detail.component';
-import { Router, Event } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Event, Router } from '@angular/router';
 
 @Component(
     {
@@ -20,12 +18,18 @@ import { Router, Event } from '@angular/router';
            `
     }
 )
-export class AppComponent {
-    url: string;
-    constructor(private router: Router) {
-        this.url = "";
+export class AppComponent implements OnInit {
+    url: string = "";
+
+    constructor(
+        private router: Router
+    ) {
+    }
+
+    ngOnInit() {
         this.router.events.subscribe(e => this.onRouterEvent(e));
     }
+
     onRouterEvent(event: Event) {
         this.url = event.url;
     }
