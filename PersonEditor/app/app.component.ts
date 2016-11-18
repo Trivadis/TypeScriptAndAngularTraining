@@ -1,5 +1,4 @@
 import { Component, NgZone, Input } from '@angular/core';
-import { Person } from './model/person';
 import { PersonListComponent } from './components/allPersons/person-list.component';
 import { PersonDetailComponent } from './components/allPersons/person-detail.component';
 import { Router, Event } from '@angular/router';
