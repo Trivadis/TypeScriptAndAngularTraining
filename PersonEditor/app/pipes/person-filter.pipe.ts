@@ -1,6 +1,6 @@
+import { Pipe, PipeTransform } from '@angular/core';
 
 import { Person } from './../model/person';
-import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
     name: 'personFilter'

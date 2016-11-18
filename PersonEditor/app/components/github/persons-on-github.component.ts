@@ -1,18 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { Http } from '@angular/http';
-import { Person } from './../../model/person';
-import { PersonDetailComponent } from './../allPersons/person-detail.component';
-import { PersonService } from './../../services/person.service';
-import { Router } from '@angular/router';
+import { Http, Response } from '@angular/http';
+import { Observable } from 'rxjs/observable';
 
-@Component(
-    {
-        moduleId: module.id,
-        templateUrl: 'persons-on-github.Component.html'
-    }
-)
+import { Person } from './../../model/person';
+import { PersonService } from './../../services/person.service';
+
+@Component({
+    moduleId: module.id,
+    templateUrl: 'persons-on-github.Component.html'
+})
 export class PersonsOnGithubComponent implements OnInit {
-    pageTitle:string = "Developers"
+    pageTitle: string = "Developers"
     personList: Person[] = [];
 
     myuser: GithubUser;
@@ -31,37 +29,35 @@ export class PersonsOnGithubComponent implements OnInit {
 
     onLoadGithubDetails(person: Person) {
         this.currentUser = person.githubaccount;
-        this.loadGithubUser()
-            .subscribe(
-                user => { this.myuser = user as GithubUser },
-                error => this.errorMessage = <any>error
-            );
+        this.loadGithubUser().subscribe(
+            user => this.myuser = user as GithubUser,
+            error => this.errorMessage = <any>error
+        );
 
-        this.loadGithubUserRepos()
-            .subscribe(
-                repos => this.myrepos = repos as GithubRepo[],
-                error => this.errorMessage = <any>error
-            );
+        this.loadGithubUserRepos().subscribe(
+            repos => this.myrepos = repos as GithubRepo[],
+            error => this.errorMessage = <any>error
+        );
     }
 
     loadGithubUser() {
         return this._http.get('https://api.github.com/users/' + this.currentUser)
-            .map(res => <GithubUser>res.json());
-        //  .catch(this.handleError);
+            .map(res => res.json() as GithubUser)
+            .catch(e => this.handleError(e));
     }
 
     loadGithubUserRepos() {
         return this._http.get('https://api.github.com/users/' + this.currentUser + '/repos')
-            .map(res => <GithubRepo[]>res.json());
-        //  .catch(this.handleError);
+            .map(res => res.json() as GithubRepo[])
+            .catch(e => this.handleError(e));
     }
 
-    //  private handleError (error: Response) {
-    //     // in a real world app, we may send the server to some remote logging infrastructure
-    //     // instead of just logging it to the console
-    //     console.error(error);
-    //     return Observable.throw(error.json().error || 'Server error');
-    //   }
+    private handleError(error: Response) {
+        // in a real world app, we may send the server to some remote logging infrastructure
+        // instead of just logging it to the console
+        console.error(error);
+        return Observable.throw(error.json().error || 'Server error');
+    }
 }
 
 interface GithubUser {

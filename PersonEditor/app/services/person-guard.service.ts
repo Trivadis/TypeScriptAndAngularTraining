@@ -2,9 +2,11 @@ import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router } from '@angular/router';
 
 @Injectable()
-export class PersonDetailGuard implements  CanActivate {
+export class PersonDetailGuard implements CanActivate {
 
-    constructor(private _router: Router) {
+    constructor(
+        private _router: Router
+    ) {
     }
 
     canActivate(route: ActivatedRouteSnapshot): boolean {
@@ -18,6 +20,4 @@ export class PersonDetailGuard implements  CanActivate {
         };
         return true;
     }
-
-    
 }

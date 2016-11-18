@@ -1,27 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Http } from '@angular/http';
 
 import { Person } from './../../model/person';
-import { PersonDetailComponent } from './person-detail.component';
 import { PersonService } from './../../services/person.service';
 
-@Component(
-    {
-        moduleId: module.id,
-        templateUrl: 'person-list.component.html',
-        styleUrls: ['person-list.component.css']
-    }
-)
+@Component({
+    moduleId: module.id,
+    templateUrl: 'person-list.component.html',
+    styleUrls: ['person-list.component.css']
+})
 export class PersonListComponent implements OnInit {
-    pageTitle:string = "All persons";
-    // listFilter: string;
+    pageTitle: string = "All persons";
     personList: Person[] = [];
 
     constructor(
         private personService: PersonService,
         private router: Router) {
-    }
+        }
 
     onEdit(person: Person) {
         let link = ['/person', person.id];
@@ -29,7 +24,6 @@ export class PersonListComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.personService.getPersons()
-            .subscribe(res => this.personList = res);
+        this.personService.getPersons().subscribe(res => this.personList = res);
     }
 }

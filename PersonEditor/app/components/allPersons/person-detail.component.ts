@@ -1,7 +1,7 @@
-
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+
 import { Person } from './../../model/person';
-import { Router, ActivatedRoute } from '@angular/router';
 import { PersonService } from './../../services/person.service';
 
 @Component({
@@ -37,7 +37,7 @@ export class PersonDetailComponent implements OnInit {
     );
   }
 
-  onBack(){
-      this._router.navigate(['/persons'])
+  onBack() {
+    this._router.navigate(['/persons'])
   }
 }
