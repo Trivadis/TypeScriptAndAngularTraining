@@ -5,6 +5,8 @@
     "compilerOptions": {
         "noImplicitAny": true,
         "target": "es5",
-        "types": ["node"]
+        "types": [
+            "node"
+        ]
     }
 }

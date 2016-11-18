@@ -1,7 +1,12 @@
-import express = require("express");
-import fs = require("fs");
-import bodyParser = require("body-parser");
-import { Person } from "./person";
+import bodyParser = require('body-parser');
+import express = require('express');
+
+interface Person {
+    id: number;
+    firstname: string;
+    lastname: string;
+    githubaccount?: string;
+}
 
 let app = express();
 const port = 8180;
@@ -9,7 +14,7 @@ const port = 8180;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-let persons: Array<Person> = [
+let persons: Person[] = [
     { id: 1, firstname: "Max", lastname: "Payne" },
     { id: 2, firstname: "Lara", lastname: "Croft" },
     { id: 3, firstname: "Thomas", lastname: "Huber", githubaccount: "thomasclaudiushuber" },
@@ -19,7 +24,7 @@ let persons: Array<Person> = [
 ];
 
 //CORS middleware
-let allowCrossDomain = function (req: any, res: any, next: any) {
+let allowCrossDomain = function(req: any, res: any, next: any) {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
     res.header('Access-Control-Allow-Headers', 'Content-Type');
