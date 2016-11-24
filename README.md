@@ -11,5 +11,5 @@ http://www.trivadis.com/de/training/einfuehrung-typescript-und-angular-20-ad-ang
 
 
 ```
-$ git clone https://github.com/TrivadisCloud/TypeScriptAndAngular2Training/
+$ git clone https://github.com/TrivadisCloud/TypeScriptAndAngular2Training.git
 ```
