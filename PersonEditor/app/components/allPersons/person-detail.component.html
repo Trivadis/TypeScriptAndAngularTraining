@@ -1,9 +1,16 @@
 <h2>PersonDetail: {{person?.firstname}}</h2>
-<form name="personForm" (ngSubmit)="onSave()">
+<form name="personForm" (ngSubmit)="onSave()" #personForm="ngForm">
     <div *ngIf="person">
         <div>
             <label for="inputFirstname">Firstname: </label>
-            <input id="inputFirstname" name="inputFirstname" class="form-control" type="text" [(ngModel)]="person.firstname" />
+            <input id="inputFirstname" name="inputFirstname"
+             class="form-control" 
+             type="text" [(ngModel)]="person.firstname"
+              required #personFirstName="ngModel"/>
+        </div>
+         <div [hidden]="personFirstName.valid"
+             class="alert alert-danger">
+          Firstname is required
         </div>
         <div>
             <label for="inputLastName">LastName: </label>
@@ -13,7 +20,7 @@
             <label for="inputGithub">Github account: </label>
             <input id="inputGithub"name="inputGithub" class="form-control" type="text" [(ngModel)]="person.githubaccount" />
         </div>
-        <button type="submit" class="btn btn-primary">Save</button>
+        <button type="submit" class="btn btn-primary" [disabled]="!personForm.form.valid">Save</button>
         <button type="button" class="btn" (click)="onBack()">Cancel</button>
     </div>
 </form>
