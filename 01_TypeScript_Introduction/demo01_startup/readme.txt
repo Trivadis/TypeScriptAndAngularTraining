@@ -16,7 +16,7 @@
 	}
 
 4.	Use the Friend-interface for the method-parameter:
-    friends: Friend[]
+    friends: IFriend[]
 
 5.	Note that you have two errors now:
 	a.	One where you call localCompare instead of localeCompare
@@ -50,7 +50,7 @@
     		lastName:string;
     		GetFullName(friend:IFriend):string
     		{
-        		return friend.firstname +' ' + friend.lastname;
+        		return friend.firstName +' ' + friend.lastName;
     		}
 	}
 
