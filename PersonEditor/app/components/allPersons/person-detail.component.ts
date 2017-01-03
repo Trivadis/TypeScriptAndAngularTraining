@@ -31,10 +31,14 @@ export class PersonDetailComponent implements OnInit {
     this._personService.getPersonById(id).subscribe(res => this.person = res);
   }
 
-  onSave() {
-    this._personService.savePerson(this.person).subscribe(res =>
-      this.onBack()
-    );
+  onSave({value, valid}: { value: Person, valid: boolean }) { //Example of Object destructuring
+    console.log(value);
+    console.log(valid);
+    if (valid) {
+      this._personService.savePerson(this.person).subscribe(res =>
+        this.onBack()
+      );
+    }
   }
 
   onBack() {

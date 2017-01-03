@@ -1,24 +1,40 @@
 <h2>PersonDetail: {{person?.firstname}}</h2>
-<form name="personForm" (ngSubmit)="onSave()" #personForm="ngForm">
+<form #personForm="ngForm" (ngSubmit)="onSave(personForm)" novalidate>
     <div *ngIf="person">
-        <div>
+        <div class="form-group">
             <label for="inputFirstname">Firstname: </label>
-            <input id="inputFirstname" name="inputFirstname"
-             class="form-control" 
-             type="text" [(ngModel)]="person.firstname"
-              required #personFirstName="ngModel"/>
+            <input id="inputFirstname" name="inputFirstname" class="form-control" type="text" 
+                [(ngModel)]="person.firstname" required
+                #inputFirstname="ngModel"
+            />
+            <div *ngIf="inputFirstname.errors && (inputFirstname.dirty || inputFirstname.touched)" class="alert alert-danger">
+                <div [hidden]="!inputFirstname.errors.required">
+                    Firstname is required
+                </div>
+            </div>
         </div>
-         <div [hidden]="personFirstName.valid"
-             class="alert alert-danger">
-          Firstname is required
+        <div class="form-group">
+            <label for="inputLastName">Lastname: </label>
+            <input id="inputLastName" name="inputLastName" class="form-control" type="text" [(ngModel)]="person.lastname" 
+                maxlength="50" minlength="5"
+                required
+                #inputLastName="ngModel" />
+                
+                <div *ngIf="inputLastName.errors && (inputLastName.dirty || inputLastName.touched)" class="alert alert-danger">
+                    <div [hidden]="!inputLastName.errors.required">
+                        Lastname is required
+                    </div>
+                    <div [hidden]="!inputLastName.errors.minlength">
+                        Lastname must be at least 5 characters long.
+                    </div>
+                    <div [hidden]="!inputLastName.errors.maxlength">
+                        Lastname cannot be more than 24 characters long.
+                    </div>
+                </div>
         </div>
-        <div>
-            <label for="inputLastName">LastName: </label>
-            <input id="inputLastName"name="inputLastName" class="form-control" type="text" [(ngModel)]="person.lastname" />
-        </div>
-        <div>
+        <div class="form-group">
             <label for="inputGithub">Github account: </label>
-            <input id="inputGithub"name="inputGithub" class="form-control" type="text" [(ngModel)]="person.githubaccount" />
+            <input id="inputGithub" name="inputGithub" class="form-control" type="text" [(ngModel)]="person.githubaccount" />
         </div>
         <button type="submit" class="btn btn-primary" [disabled]="!personForm.form.valid">Save</button>
         <button type="button" class="btn" (click)="onBack()">Cancel</button>
