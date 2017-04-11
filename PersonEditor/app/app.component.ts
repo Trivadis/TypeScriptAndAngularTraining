@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Event, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component(
     {
@@ -30,7 +30,7 @@ export class AppComponent implements OnInit {
         this.router.events.subscribe(e => this.onRouterEvent(e));
     }
 
-    onRouterEvent(event: Event) {
+    onRouterEvent(event: any) {
         this.url = event.url;
     }
 
