@@ -16,7 +16,7 @@ import {Person} from './person';
                <td>{{person.githubaccount}}</td>
              </tr>
            </table>
-           <div *ngIf="selectedPerson">
+           <div *ngIf="selectedPerson;else loading">
 		     Selected Person: 
              <label for="firstname" >Firstname: </label>
              <input id="firstname" type="text" [(ngModel)]="selectedPerson.firstname"/>
@@ -26,6 +26,7 @@ import {Person} from './person';
            <div *ngIf="selectedPerson?.firstname === 'Thomas'">
              You've selected a Thomas in the list. :-)
            </div>
+           <ng-template #loading>Please select a person</ng-template>
             `
 })
 export class AppComponent {
