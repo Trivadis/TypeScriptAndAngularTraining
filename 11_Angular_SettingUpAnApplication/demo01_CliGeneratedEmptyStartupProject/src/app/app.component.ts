@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  template: `<h1>Details of {{fullname | uppercase}}</h1>
+            <input type="text" [value]="fullname">`
 })
 export class AppComponent {
-  title = 'app';
+  fullname: string = "Lara Croft";
 }
