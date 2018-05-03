@@ -1,6 +1,6 @@
 function onKeyUp() {
     // Grab the input element and its value
-    var input = document.getElementById("test");
+    var input = document.getElementById("myInput");
     var firstname = input.value;
     // Grab the output element
     var output = document.getElementById("myOutput");
