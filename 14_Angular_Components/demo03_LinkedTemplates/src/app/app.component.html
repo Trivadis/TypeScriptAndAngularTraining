@@ -1,0 +1,13 @@
+<h1>Persons displayed from separate html file</h1>
+<table>
+    <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Github</th>
+    </tr>
+    <tr *ngFor="let person of persons">
+        <td>{{person.firstname}}</td>
+        <td>{{person.lastname}}</td>
+        <td>{{person.githubaccount}}</td>
+    </tr>
+</table>
