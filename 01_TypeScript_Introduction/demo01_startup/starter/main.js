@@ -1,9 +1,7 @@
-function sortFriendsByName(friends) {
-    var result = friends.slice(0);
-
-    result.sort(function (x, y) {
-        return x.firstName.localCompare(y.firstName);
-    });
-
-    return result;
+"use strict";
+function printFirstNames(friends) {
+    for (let friend of friends)
+        console.log(friend.firstName);
+    }
 }
+printFirstNames(7);

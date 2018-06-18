@@ -1,25 +1,13 @@
-interface IFriend {
-    firstname: string;
-    lastname: string;
+interface Friend{
+    firstName:string;
 }
 
-class Friend implements IFriend {
-    firstname: string;
-    lastname: string;
-
-    GetFullName(friend: IFriend): string {
-        return friend.firstname + ' ' + friend.lastname;
+function printFirstNames(friends:Friend[]){
+    for(let friend of friends){
+        console.log(friend.firstName);
     }
 }
 
-function sortFriendsByName(friends: IFriend[]) {
-    let result = friends.slice(0);
-
-    result.sort((x, y) => {
-        return x.firstname.localeCompare(y.firstname);
-    });
-
-    return result;
-}
-
-sortFriendsByName([{ firstname: "Thomas", lastname: "Huber" }]);
+printFirstNames([{ firstName:"Thomas"},
+{firstName:"Christoph"},
+{firstName:"Anna"}]);
