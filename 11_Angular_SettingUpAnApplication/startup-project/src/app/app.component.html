@@ -11,7 +11,11 @@
 </header>
 <main>
     <div class="container">
-        <router-outlet></router-outlet>
+	
+			<h2>Details of {{fullname | uppercase}}</h2>
+            <input type="text" [value]="fullname">
+	
+        <!-- <router-outlet></router-outlet> -->
     </div>
 </main>
 <footer class="bg-light">
