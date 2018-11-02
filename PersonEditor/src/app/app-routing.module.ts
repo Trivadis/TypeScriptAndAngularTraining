@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
-import { PersonDetailComponent } from './../person-detail/person-detail.component';
-import { PersonListComponent } from './../person-list/person-list.component';
-import { PersonsOnGithubComponent } from './../persons-on-github/persons-on-github.component';
-import { PersonDetailGuard } from './../person-guard.service';
+import { PersonDetailGuard } from './guards/person-detail.guard';
+import { PersonDetailComponent } from './person-detail/person-detail.component';
+import { PersonListComponent } from './person-list/person-list.component';
+import { PersonsOnGithubComponent } from './persons-on-github/persons-on-github.component';
 
 const routes: Routes = [
   { path: 'persons', component: PersonListComponent },
@@ -18,4 +17,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

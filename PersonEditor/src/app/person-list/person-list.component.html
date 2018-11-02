@@ -1,35 +1,41 @@
-<div class="panel panel-primary">
-  <div class="panel-heading">
-      {{pageTitle}}
-  </div>
-  <!-- Filter -->
-  <div class='row' style="margin: 10px 5px;">
-      <div class='col-md-2'>Search by:</div>
-      <div class='col-md-4'>
-          <input type='text' [(ngModel)]='listFilter' />
-      </div>
-  </div>
-  <div class='panel-body'>
-      <div class='table-responsive'>
-          <table class='table person-table' *ngIf='personList && personList.length'>
-              <thead>
-                  <tr>
-                      <th>Firstname</th>
-                      <th>Lastname</th>
-                      <th>Github</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  <tr *ngFor="let person of personList | personFilter: listFilter" (click)="onEdit(person)">
-                      <td>{{person.firstname}}</td>
-                      <td>{{ person.lastname }}</td>
-                      <td>
-                          <span *ngIf="person.githubaccount">(Github: {{person.githubaccount}})</span>
-                          <span *ngIf="!person.githubaccount">-</span>
-                      </td>
-                  </tr>
-              </tbody>
-          </table>
-      </div>
-  </div>
+<h2>{{pageTitle}}</h2>
+<div class="row mb-2">
+    <div class="col-md-2">Search:</div>
+    <div class="col-md-6">
+        <input type="search" [(ngModel)]="listFilter" class="form-control" />
+    </div>
+</div>
+<div class="row" *ngIf="listFilter">
+    <div class="col-md-6">
+        <span>Filtered by: {{listFilter}} </span>
+    </div>
+</div>
+<div class="row mt-2">
+    <div class="col-md-12">
+        <table class='table table-striped' *ngIf='personList && personList.length'>
+            <thead>
+                <tr>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>Github</th>
+                    <th>&nbsp;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let person of personList | personFilter: listFilter">
+                    <td>{{person.firstname}}</td>
+                    <td>{{ person.lastname }}</td>
+                    <td>
+                        <span *ngIf="person.githubaccount">(Github: {{person.githubaccount}})</span>
+                        <span *ngIf="!person.githubaccount">-</span>
+                    </td>
+                    <td>
+                        <a class="btn btn-ok" [routerLink]="['/person',  person.id]">
+                            Edit
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
