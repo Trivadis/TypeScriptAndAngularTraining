@@ -1,17 +1,16 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Person } from './person';
-import { Http, Response } from '@angular/http';
-import { Observable } from 'rxjs/observable';
+import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
+import { Person } from './person';
 
 @Injectable()
 export class PersonDataService {
-    readonly webUrl: string = "http://localhost:8180/api/Persons";
+  readonly webUrl: string = 'http://localhost:8180/api/Persons';
 
-    constructor(private _http: Http) { }
+  constructor(private _http: HttpClient) {}
 
-    loadPersons(): Observable<Person[]> {
-        return this._http.get(this.webUrl)
-            .map(r => r.json() as Person[]);
-    }
+  loadPersons(): Observable<Person[]> {
+    return this._http.get<Person[]>(this.webUrl);
+  }
 }
