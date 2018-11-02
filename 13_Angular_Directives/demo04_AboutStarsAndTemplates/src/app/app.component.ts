@@ -17,8 +17,6 @@ import { Person } from './person';
               </tr>
             </table>
 
-
-
             <!-- Classical ngIf -->
             <input *ngIf="selectedPerson" type="text" [(ngModel)]="selectedPerson.firstname"/>
 
