@@ -1,0 +1,62 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+a,
+a:hover,
+a:focus {
+  color: #c92c21;
+}
+
+#pageBanner {
+  background-image: url('https://m.trivadis.com/hubfs/TVD_Training/Landingpages/Angular/Angular-Training.jpg');
+  height: 150px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center -165px;
+  padding: 15px 30px;
+}
+#pageBanner h1 {
+  font-size: 38px;
+  color: #fff;
+  font-weight: 700;
+  line-height: 74px !important;
+  margin-bottom: 0;
+  text-shadow: 0 0 40px rgba(0, 0, 0, 0.75);
+}
+
+header nav {
+  margin: 5px 0;
+}
+header nav a {
+  font-size: 1em;
+  padding: 5px;
+  margin-right: 10px;
+}
+header nav .active {
+  color: black;
+}
+
+main {
+  padding: 10px 0;
+}
+footer {
+  font-size: 0.85em;
+  padding-bottom: 2rem;
+  padding-top: 1em;
+}
+.panel-primary > .panel-heading {
+  background-color: #c92c21;
+  border-color: #c92c21;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #c92c21;
+  border-color: #c92c21;
+}
+.btn-primary:hover {
+  color: #fff;
+  background-color: #8c0000;
+  border-color: #8c0000;
+  transition: all 300ms linear;
+}

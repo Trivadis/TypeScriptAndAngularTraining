@@ -6,15 +6,9 @@ import { Router } from '@angular/router';
   templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit {
-  url = '';
-
-  constructor(private router: Router) {}
+  constructor() {}
 
   ngOnInit() {
-    this.router.events.subscribe(e => this.onRouterEvent(e));
-  }
-
-  onRouterEvent(event: any) {
-    this.url = event.url;
+    
   }
 }
