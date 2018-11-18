@@ -1,11 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Person } from '../models/person';
-import { PersonService } from '../services/person.service';
+import { Person } from './../../models/person';
+import { PersonService } from './../../services/person.service';
 
 @Component({
-  moduleId: module.id,
-  templateUrl: 'person-detail.component.html'
+  templateUrl: './person-detail.component.html'
 })
 export class PersonDetailComponent implements OnInit {
   @Input()

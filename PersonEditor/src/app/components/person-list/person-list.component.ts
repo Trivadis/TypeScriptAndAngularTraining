@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Person } from '../models/person';
-import { PersonService } from '../services/person.service';
+import { Person } from './../../models/person';
+import { PersonService } from './../../services/person.service';
 
 @Component({
-  moduleId: module.id,
-  templateUrl: 'person-list.component.html'
+  templateUrl: './person-list.component.html'
 })
 export class PersonListComponent implements OnInit {
   pageTitle = 'All persons';

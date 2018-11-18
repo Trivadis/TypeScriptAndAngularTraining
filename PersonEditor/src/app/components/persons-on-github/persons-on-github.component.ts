@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { catchError } from 'rxjs/operators';
-import { GithubRepo } from '../models/github-repo';
-import { GithubUser } from '../models/github-user';
-import { Person } from '../models/person';
-import { GithubService } from '../services/github.service';
-import { PersonService } from '../services/person.service';
+import { GithubRepo } from './../../models/github-repo';
+import { GithubUser } from './../../models/github-user';
+import { Person } from './../../models/person';
+import { GithubService } from './../../services/github.service';
+import { PersonService } from './../../services/person.service';
 
 @Component({
-  moduleId: module.id,
-  templateUrl: 'persons-on-github.Component.html'
+  templateUrl: './persons-on-github.Component.html'
 })
 export class PersonsOnGithubComponent implements OnInit {
   pageTitle = 'Developers';
