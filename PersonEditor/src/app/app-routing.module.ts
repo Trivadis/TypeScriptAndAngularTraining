@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: 'persons', component: PersonListComponent },
   { path: 'person/:personId', canActivate: [PersonDetailGuard], component: PersonDetailComponent },
   { path: 'developers', component: PersonsOnGithubComponent },
-  { path: '', redirectTo: '**', pathMatch: 'full' },
+  { path: '', redirectTo: '/persons', pathMatch: 'full' },
   { path: '**', redirectTo: '/persons', pathMatch: 'full' }
 ];
 
