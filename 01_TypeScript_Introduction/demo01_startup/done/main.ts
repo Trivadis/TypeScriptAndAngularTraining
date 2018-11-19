@@ -7,6 +7,11 @@ class Friend implements IFriend {
   firstname: string;
   lastname: string;
 
+  constructor(firstname: string, lastname: string) {
+    this.firstname = firstname;
+    this.lastname = lastname;
+  }
+
   GetFullName(friend: IFriend): string {
     return friend.firstname + ' ' + friend.lastname;
   }
