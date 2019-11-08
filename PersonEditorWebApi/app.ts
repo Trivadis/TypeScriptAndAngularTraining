@@ -68,7 +68,7 @@ personRouter
   });
 
 personRouter.route('/persons/:id').get((request: express.Request, response: express.Response) => {
-  let id = request.params.id;
+  let id = +request.params.id;
   let filteredPersons = persons.filter(p => p.id == id);
 
   if (filteredPersons.length != 1) {
@@ -91,4 +91,5 @@ app.use('/api', personRouter);
 
 app.listen(port, () => {
   console.log('Started listening on port ' + port);
+  console.log('You can navigate to http://localhost:8180/api/persons');
 });

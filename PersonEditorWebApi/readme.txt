@@ -1,2 +1,2 @@
 Before running "launchserver.bat",
-do a "npm install" for this directory
+do an "npm install" for this directory
