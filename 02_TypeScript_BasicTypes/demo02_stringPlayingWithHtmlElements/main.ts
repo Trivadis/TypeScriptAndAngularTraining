@@ -1,7 +1,7 @@
 function onKeyUp() {
   // Grab the input element and its value
   let input = document.getElementById("myInput");
-  let firstname = input.value;
+  let firstname = (input as HTMLInputElement).value;
 
   // Grab the output element
   let output = document.getElementById("myOutput");
