@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { Person } from './../../models/person';
 import { PersonService } from './../../services/person.service';
 
@@ -9,11 +10,16 @@ import { PersonService } from './../../services/person.service';
 export class PersonListComponent implements OnInit {
   pageTitle = 'All persons';
   personList: Person[] = [];
+  // personList$: Observable<Person[]>;
   listFilter: string;
 
   constructor(private personService: PersonService, private router: Router) {}
 
   ngOnInit() {
     this.personService.getPersons().subscribe(res => (this.personList = res));
+
+    // alternative with async pipe
+    // this.personList$ =   this.personService.getPersons();
+
   }
 }
