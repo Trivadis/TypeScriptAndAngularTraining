@@ -36,11 +36,13 @@
 	sortFriendsByName([{firstName:"Thomas",lastname:"Gassmann" }]);
 
 
-9.	Open a cmd (or command window in Visual Studio Code CTRL+!) and type 
+9.	Open a cmd (or command window in Visual Studio Code CTRL+!) and type
 	tsc -w main.ts
-	
+
 	This will start the TypeScript-Compiler (tsc) in watch-mode for the main.ts-file.
 	Now you have a generated main.js file, and everytime you change the main.ts, the main.js will be re-generated.
+
+	If tsc is not installed, type "npm install -g typescript"
 
 
 10.	Now add a class to the main.ts and view the output in the main.js-file
@@ -60,8 +62,9 @@
 11.	Add a tsconfig.json-file by going to the console and type
 	tsc -init
 
+	A tsconfig.json is generated and pay attention to strictMode.
 
-12.	Start the TypeScript-compiler in watch-mode again. Just type in 
+12.	Start the TypeScript-compiler in watch-mode again. Just type in
 	tsc -w
 
 
@@ -69,5 +72,5 @@
 	"target": "es5",        ==>        "target": "es6",
 
 
-Note that the generated code has now a real class and the lambda-function, as these features are part of ecmascript2015/ES6. 
+Note that the generated code has now a real class and the lambda-function, as these features are part of ecmascript2015/ES6.
 You can change it back to "es5" and the generated code will be again ES5-Standard.
