@@ -7,7 +7,7 @@ import { GithubService } from './../../services/github.service';
 import { PersonService } from './../../services/person.service';
 
 @Component({
-  templateUrl: './persons-on-github.Component.html'
+  templateUrl: './persons-on-github.component.html',
 })
 export class PersonsOnGithubComponent implements OnInit {
   pageTitle = 'Developers';
@@ -18,22 +18,27 @@ export class PersonsOnGithubComponent implements OnInit {
   currentUser: string;
   errorMessage: string;
 
-  constructor(private _personService: PersonService, private _githubService: GithubService) {}
+  constructor(
+    private _personService: PersonService,
+    private _githubService: GithubService
+  ) {}
 
   ngOnInit() {
-    this._personService.getPersonsWithGithubAccount().subscribe(res => (this.personList = res));
+    this._personService
+      .getPersonsWithGithubAccount()
+      .subscribe((res) => (this.personList = res));
   }
 
   onLoadGithubDetails(person: Person) {
     this.currentUser = person.githubaccount;
     this._githubService
       .loadGithubUser(person.githubaccount)
-      .pipe(catchError(error => (this.errorMessage = <any>error)))
-      .subscribe(user => (this.myuser = user as GithubUser));
+      .pipe(catchError((error) => (this.errorMessage = <any>error)))
+      .subscribe((user) => (this.myuser = user as GithubUser));
 
     this._githubService
       .loadGithubUserRepos(person.githubaccount)
-      .pipe(catchError(error => (this.errorMessage = <any>error)))
-      .subscribe(repos => (this.myrepos = repos as GithubRepo[]));
+      .pipe(catchError((error) => (this.errorMessage = <any>error)))
+      .subscribe((repos) => (this.myrepos = repos as GithubRepo[]));
   }
 }
