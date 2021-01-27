@@ -46,14 +46,13 @@
 
 
 10.	Now add a class to the main.ts and view the output in the main.js-file
-	class Friend implements IFriend
-	{
-    		firstName:string;
-    		lastName:string;
-    		GetFullName(friend:IFriend):string
-    		{
-        		return friend.firstName +' ' + friend.lastName;
-    		}
+	class Friend implements IFriend {
+  		firstName: string = "";
+		lastName: string = "";
+
+		GetFullName(friend: IFriend): string {
+			return friend.firstName + ' ' + friend.lastName;
+		}
 	}
 
 	Look at the output. It's the typical JavaScript-prototype stuff to create some kind of class
@@ -62,7 +61,7 @@
 11.	Add a tsconfig.json-file by going to the console and type
 	tsc -init
 
-	A tsconfig.json is generated and pay attention to strictMode.
+	A tsconfig.json is generated and pay attention to strictMode. firstName and lastName has to be initialized
 
 12.	Start the TypeScript-compiler in watch-mode again. Just type in
 	tsc -w
