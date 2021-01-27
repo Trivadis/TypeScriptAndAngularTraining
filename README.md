@@ -7,8 +7,9 @@ http://www.trivadis.com/de/training/einfuehrung-typescript-und-angular-20-ad-ang
 
 1.         Visual Studio Code: https://code.visualstudio.com/Download
 2.         Node.js und NPM: https://nodejs.org (LTS version)
-3.         Git: https://git-scm.com/downloads
-4.         Clone this repository
+3.         Install Angular CLI  npm install -g @angular/cli
+4.         Git: https://git-scm.com/downloads
+5.         Clone this repository
 
 ```
 $ git clone https://github.com/Trivadis/TypeScriptAndAngularTraining.git
