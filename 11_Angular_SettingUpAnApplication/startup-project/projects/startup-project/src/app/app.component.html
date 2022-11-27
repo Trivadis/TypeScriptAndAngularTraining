@@ -1,0 +1,25 @@
+<header class="bg-light">
+  <div id="pageBanner">
+      <h1>Person Editor</h1>
+  </div>
+  <div class="container">
+      <nav>
+          <a routerLinkActive="active">All Persons</a>
+          <a routerLinkActive="active">Developers</a>
+      </nav>
+  </div>
+</header>
+<main>
+  <div class="container">
+
+    <h2>Details of {{fullname | uppercase}}</h2>
+          <input type="text" [value]="fullname">
+
+      <!-- <router-outlet></router-outlet> -->
+  </div>
+</main>
+<footer class="bg-light">
+  <div class="container">
+      <p>&copy; 2022, Trivadis AG</p>
+  </div>
+</footer>

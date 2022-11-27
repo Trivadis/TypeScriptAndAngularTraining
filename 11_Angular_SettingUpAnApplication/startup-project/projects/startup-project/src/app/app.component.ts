@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
  
-  fullname: string = "Lara Croft";
+  fullname: string = "Mark Munster";
 }

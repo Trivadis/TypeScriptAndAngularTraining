@@ -8,11 +8,7 @@ a:focus {
 }
 
 #pageBanner {
-  background-image: url('https://m.trivadis.com/hubfs/TVD_Training/Landingpages/Angular/Angular-Training.jpg');
-  height: 150px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center -165px;
+  background: linear-gradient(150deg,#ff001e,#ff2350 25%,#dc19ff 50%,#9600ff 75%,#5a00d2);
   padding: 15px 30px;
 }
 #pageBanner h1 {
