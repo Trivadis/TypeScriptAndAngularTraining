@@ -1,0 +1,23 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="form">
+
+    <mat-form-field appearance="outline">
+        <mat-label>Full name</mat-label>
+        <input matInput placeholder="Your full name" formControlName="name">
+        <mat-error *ngIf="name.hasError('required') && name.touched" class="error">
+            Name is required
+        </mat-error>
+        <mat-error *ngIf="name.hasError('minlength') && name.touched" class="error">
+            Minimum of 4 characters
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Email address</mat-label>
+        <input matInput placeholder="Your email" formControlName="email">
+        <mat-error *ngIf="email.hasError('required') && email.touched" class="error">
+            Email is required
+        </mat-error>
+    </mat-form-field>
+
+    <button type="submit" [disabled]="form.invalid" mat-raised-button color="primary">Save</button>
+</form>

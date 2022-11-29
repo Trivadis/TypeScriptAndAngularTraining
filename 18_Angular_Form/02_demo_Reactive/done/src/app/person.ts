@@ -1,4 +1,6 @@
+import { FormControl } from "@angular/forms";
+
 export interface Person {
-  name: string;
-  email: string;
+  name: FormControl<string>;
+  email: FormControl<string>;
 }

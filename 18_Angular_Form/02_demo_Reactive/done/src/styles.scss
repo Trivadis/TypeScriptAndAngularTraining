@@ -1,0 +1,14 @@
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+
+    form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        mat-form-field {
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,27 @@
+<!-- TODO: Bind person object to form and make each input required using reactive form approach -->
+<form>
+    <mat-form-field appearance="outline">
+        <mat-label>Full name</mat-label>
+        <input matInput placeholder="Your full name">
+        <!-- TODO: Add proper error condition -->
+        <mat-error>
+            Name is required
+        </mat-error>
+        <!-- TODO: Add proper error condition -->
+        <mat-error>
+            Minimum of 4 characters
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Email address</mat-label>
+        <input matInput placeholder="Your email">
+
+        <!-- TODO: Add proper error condition -->
+        <mat-error>
+            Email is required
+        </mat-error>
+    </mat-form-field>
+
+    <button type="submit" mat-raised-button color="primary">Save</button>
+</form>
