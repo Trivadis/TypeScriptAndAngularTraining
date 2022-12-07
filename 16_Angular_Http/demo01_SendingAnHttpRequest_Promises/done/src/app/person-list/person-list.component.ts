@@ -34,4 +34,9 @@ export class PersonListComponent implements OnInit {
   onPersonClick(person: Person) {
     this.selectedPerson = person;
   }
+
+  onRemove(person: Person) {
+    // TODO: Which improvement can we made to this logic?
+    this.persons = this.persons.filter(p => p.firstname !== person.firstname);
+  }
 }
