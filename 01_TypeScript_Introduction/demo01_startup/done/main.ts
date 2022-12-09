@@ -27,5 +27,10 @@ function sortFriendsByName(friends: IFriend[]) {
   return result;
 }
 
-sortFriendsByName([{ firstname: 'Thomas', lastname: 'Huber' }]);
-sortFriendsByName([{ firstname: 'Thomas', lastname: 'Huber' }]);
+const res = sortFriendsByName([
+  { firstname: 'Thomas', lastname: 'Huber' },
+  { firstname: 'Thomas', lastname: 'Huber' },
+  { firstname: 'Thomas', lastname: 'Huber' }]);
+
+  console.log(res);
+  
