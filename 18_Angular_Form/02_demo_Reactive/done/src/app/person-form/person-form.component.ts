@@ -30,7 +30,7 @@ export class PersonFormComponent implements OnInit {
 
     //With FormBuilder
     this.form = this.fb.group({
-      name: ["Francesco Leardini", [Validators.required, Validators.minLength(4)]],
+      name: ["Francesco", [Validators.required, Validators.minLength(4)]],
       email: ["testmail@mail.com", Validators.required],
     });
   }
