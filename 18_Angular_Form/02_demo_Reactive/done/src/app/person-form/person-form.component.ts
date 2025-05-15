@@ -25,7 +25,7 @@ export class PersonFormComponent implements OnInit {
     //Without FormBuilder
     // this.form = new FormGroup({
     //   name: new FormControl('Thomas', [Validators.required, Validators.minLength(4)]),
-    //   email: new FormControl('thomas.gassmann@accenture.com', Validators.required)
+    //   email: new FormControl('thomas@mail.com', Validators.required)
     // });
 
     //With FormBuilder
